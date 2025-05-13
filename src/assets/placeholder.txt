@@ -1,8 +1,0 @@
-This directory contains asset files for the application.
-
-- images/ - Contains image assets
-- fonts/ - Contains font files
-- icons/ - Contains icon sets
-
-Note: This is a placeholder file to ensure the directory structure is maintained
-in version control. Actual assets should be placed in appropriate subdirectories. 
