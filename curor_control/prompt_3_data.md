@@ -135,6 +135,4 @@ prompt_3d_review        - Review and refine data model and codename conventions
    c dependency_check   - Review module dependencies for proper separation
    d security_review    - Assess data access for potential security issues
 
-||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
-
 --------------------------------------------------------------------------------

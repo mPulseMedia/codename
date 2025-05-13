@@ -2,6 +2,7 @@
   "name": "codename",
   "version": "1.0.0",
   "description": "A tool for maintaining consistent naming conventions in code",
+  "type": "module",
   "main": "src/main.js",
   "scripts": {
     "start": "serve -s .",
@@ -16,6 +17,6 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^8.56.0",
-    "serve": "^14.2.1"
+    "serve": "^11.3.2"
   }
 }

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lookup Component Demo</title>
+    <link rel="stylesheet" href="../../assets/styles/main.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .demo_container {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .controls {
+            flex: 0 0 300px;
+            padding: 1rem;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+        
+        .lookup_area {
+            flex: 1;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .control_group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .control_group h3 {
+            margin-top: 0;
+        }
+        
+        .button_row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        button {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+        }
+        
+        button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .codename_select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lookup Component Demo</h1>
+    
+    <div class="demo_container">
+        <div class="controls">
+            <div class="control_group">
+                <h3>Predefined Codenames</h3>
+                <select id="codename_select" class="codename_select">
+                    <option value="">-- Select a codename --</option>
+                    <option value="element_create">element_create (function)</option>
+                    <option value="filter_apply">filter_apply (function)</option>
+                    <option value="data_save">data_save (function)</option>
+                    <option value="app_container">app_container (variable)</option>
+                    <option value="user_profile">user_profile (class)</option>
+                </select>
+                <button id="show_codename">Show Selected</button>
+            </div>
+            
+            <div class="control_group">
+                <h3>Actions</h3>
+                <div class="button_row">
+                    <button id="clear_lookup">Clear Lookup</button>
+                </div>
+                <div class="button_row">
+                    <button id="toggle_format">Toggle Format</button>
+                </div>
+                <div class="button_row">
+                    <button id="next_snippet">Next Example</button>
+                    <button id="prev_snippet">Previous Example</button>
+                </div>
+            </div>
+            
+            <div class="control_group">
+                <h3>Empty States</h3>
+                <button id="show_empty">Show With No Snippets</button>
+            </div>
+        </div>
+        
+        <div id="lookup_area" class="lookup_area">
+            <!-- Lookup component will be rendered here -->
+        </div>
+    </div>
+    
+    <script type="module">
+        import lookup_component_create from '../components/lookup_component.js';
+        
+        // Sample codename data
+        const codenames = {
+            "element_create": {
+                name: "element_create",
+                type: "function",
+                description: "Creates a DOM element with given attributes and children"
+            },
+            "filter_apply": {
+                name: "filter_apply",
+                type: "function",
+                description: "Applies the current filter settings to the codename list"
+            },
+            "data_save": {
+                name: "data_save",
+                type: "function",
+                description: "Saves data to a specified storage location"
+            },
+            "app_container": {
+                name: "app_container",
+                type: "variable",
+                description: "Main container element for the application"
+            },
+            "user_profile": {
+                name: "user_profile",
+                type: "class",
+                description: "User profile data and methods"
+            }
+        };
+        
+        // Sample snippets data
+        const snippets = {
+            "element_create": [
+                {
+                    code: `const button = element_create('button', {
+    class: 'button button_primary',
+    text: 'Click Me',
+    onclick: handleClick
+});
+
+document.body.appendChild(button);`,
+                    language: "javascript",
+                    description: "Creating a button element"
+                },
+                {
+                    code: `// Creating a complex form element
+const form = element_create('form', { class: 'login_form' }, [
+    element_create('input', { 
+        type: 'text',
+        name: 'username',
+        placeholder: 'Username'
+    }),
+    element_create('input', { 
+        type: 'password',
+        name: 'password',
+        placeholder: 'Password'
+    }),
+    element_create('button', {
+        type: 'submit',
+        text: 'Login'
+    })
+]);`,
+                    language: "javascript",
+                    description: "Creating a form with child elements"
+                }
+            ],
+            "filter_apply": [
+                {
+                    code: `// Apply the current filter settings
+filter_apply();
+
+// Logs: filter_apply: applying filters with 23 results`,
+                    language: "javascript",
+                    description: "Basic filter application"
+                }
+            ],
+            "data_save": [
+                {
+                    code: `// Save user settings to localStorage
+data_save('user_settings', {
+    theme: 'dark',
+    fontSize: 16,
+    notifications_is: true
+});`,
+                    language: "javascript",
+                    description: "Saving user settings"
+                },
+                {
+                    code: `// Save with expiration
+data_save('session_data', userData, {
+    expires: 3600, // 1 hour
+    encrypt: true
+});`,
+                    language: "javascript",
+                    description: "Advanced saving with options"
+                }
+            ]
+        };
+        
+        // Initialize the lookup component
+        const lookup_container = document.getElementById('lookup_area');
+        const lookup_component = lookup_component_create(lookup_container);
+        lookup_component.initialize();
+        
+        // Set up event handlers
+        document.getElementById('show_codename').addEventListener('click', () => {
+            const select = document.getElementById('codename_select');
+            const codename_id = select.value;
+            
+            if (codename_id && codenames[codename_id]) {
+                const codename = codenames[codename_id];
+                const codename_snippets = snippets[codename_id] || [];
+                lookup_component.show_lookup(codename, codename_snippets);
+            }
+        });
+        
+        document.getElementById('clear_lookup').addEventListener('click', () => {
+            lookup_component.clear_lookup();
+        });
+        
+        document.getElementById('toggle_format').addEventListener('click', () => {
+            lookup_component.toggle_format();
+        });
+        
+        document.getElementById('next_snippet').addEventListener('click', () => {
+            lookup_component.next_snippet();
+        });
+        
+        document.getElementById('prev_snippet').addEventListener('click', () => {
+            lookup_component.previous_snippet();
+        });
+        
+        document.getElementById('show_empty').addEventListener('click', () => {
+            // Show a codename with no snippets
+            const codename = codenames['app_container'];
+            lookup_component.show_lookup(codename, []);
+        });
+    </script>
+</body>
+</html> 

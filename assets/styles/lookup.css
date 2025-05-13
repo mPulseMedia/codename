@@ -1,0 +1,326 @@
+/**
+ * Lookup Component Styles - Styling for code snippet display
+ */
+
+/* Lookup container styling */
+.lookup_container {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Lookup header */
+.lookup_header {
+    padding: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.lookup_title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    flex: 1;
+}
+
+.type_badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 0.75rem;
+}
+
+.lookup_actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.lookup_button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: background-color 0.2s ease;
+}
+
+.lookup_button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.lookup_button:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+.button_icon {
+    font-size: 1rem;
+}
+
+.button_text {
+    display: none; /* Hide text on small screens */
+}
+
+/* Description section */
+.lookup_description {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.lookup_description p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Snippet navigation */
+.snippet_navigation {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    gap: 0.5rem;
+}
+
+.snippet_counter {
+    margin: 0 auto;
+    font-size: 0.875rem;
+    color: var(--text-color-secondary);
+}
+
+.snippet_nav_button {
+    background-color: var(--button-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.snippet_nav_button:hover:not(:disabled) {
+    background-color: var(--hover-color);
+}
+
+.snippet_nav_button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Snippet container */
+.snippet_container {
+    flex: 1;
+    overflow: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.snippet_title {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.snippet_display {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    background-color: #282c34; /* Code background - dark by default */
+}
+
+.snippet_language {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 4px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.snippet_display pre {
+    margin: 0;
+    padding: 1rem;
+    overflow-x: auto;
+    min-height: 100%;
+}
+
+.snippet_display code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #abb2bf; /* Light gray text for code */
+}
+
+.snippet_empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-color-secondary);
+    height: 100%;
+}
+
+/* Placeholder for empty state */
+.lookup_placeholder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-color-secondary);
+}
+
+.placeholder_icon {
+    color: var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.placeholder_title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.placeholder_description {
+    font-size: 0.875rem;
+    max-width: 300px;
+}
+
+/* Copy feedback */
+.copy_feedback {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.copy_feedback_visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Dark theme adjustments */
+.theme_dark .snippet_display {
+    background-color: #1a1a1a; /* Darker background for dark theme */
+}
+
+/* Type-specific colors for badges */
+.type_function {
+    background-color: rgba(var(--function-color-rgb), 0.8);
+    color: white;
+}
+
+.type_variable {
+    background-color: rgba(var(--variable-color-rgb), 0.8);
+    color: #333;
+}
+
+.type_class {
+    background-color: rgba(var(--class-color-rgb), 0.8);
+    color: white;
+}
+
+.type_parameter {
+    background-color: rgba(var(--parameter-color-rgb), 0.8);
+    color: white;
+}
+
+.type_constant {
+    background-color: rgba(var(--constant-color-rgb), 0.8);
+    color: white;
+}
+
+.type_event {
+    background-color: rgba(var(--event-color-rgb), 0.8);
+    color: white;
+}
+
+.type_property {
+    background-color: rgba(var(--property-color-rgb), 0.8);
+    color: white;
+}
+
+.type_file {
+    background-color: rgba(var(--file-color-rgb), 0.8);
+    color: white;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .lookup_title {
+        font-size: 1.5rem;
+    }
+    
+    .button_text {
+        display: inline; /* Show button text on larger screens */
+    }
+    
+    .lookup_button {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .lookup_header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .lookup_actions {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .type_badge {
+        margin-left: 0;
+    }
+    
+    .snippet_navigation {
+        padding: 0.5rem;
+    }
+    
+    .snippet_nav_button {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .snippet_counter {
+        font-size: 0.75rem;
+    }
+} 
