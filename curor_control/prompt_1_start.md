@@ -9,7 +9,7 @@ prompt_1_start         - Define core workflow rules for project execution
   2 follow_rules       - Adhere to all principles defined in rule_1_prompt.md
 
 1b_ marker             - For this first prompt, only update the marker position
-  1 marker_update      - Move the marker down after understanding these instructions
+  1 position_update    - After processing a prompt segment, move the << YOU ARE HERE >> marker to the BOTTOM of the prompt segment that was just processed. Never place the marker before or in the middle of a segment.
   2 no_execution       - Don't execute further actions beyond marker movement at this stage
 
 1c_ roles              - Understand the project roles and responsibilities clearly

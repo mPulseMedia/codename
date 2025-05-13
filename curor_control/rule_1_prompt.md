@@ -9,7 +9,7 @@ rule_1_prompt              - Rules for retrieving and processing prompt instruct
    f no_skip            - Don't jump ahead or execute steps beyond the << YOU ARE HERE >> marker
 
 1a2_ marker_movement    - Rules for marker position tracking and updates
-   a position_update    - Move the marker after processing the current segment
+   a position_update    - IMPORTANT: After processing a prompt segment, move the << YOU ARE HERE >> marker to the BOTTOM of the prompt segment that was just processed. Never place the marker before or in the middle of a segment.
    b file_progress      - Progress to next file when current file is fully processed
    c visual_indicator   - Use the marker as a visual indicator of execution progress
    d next_task          - Clearly identify the next task based on marker position
