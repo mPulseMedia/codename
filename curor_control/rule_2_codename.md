@@ -1,13 +1,14 @@
 rule_2a_word                - Rules for selecting clear, consistent terms in codename identifiers
 
 2a_ word_choice          - Rules for selecting words and terms in codename identifiers
-
-   a case_format         - All codenames in snake_case (variables, functions, CSS, 
+   a everything          - IMPORTANT: apply codename convention to every single identifyer that 
+                           you generate: variables, functions, CSS classnames, 
                            constants, parameters, file names, event names, properties, 
-                           element IDs; use user_name not userName)
-   b boolean_naming      - End with _is for boolean variables (example: visible_is, active_is, valid_is)
-   c plurality           - Use singular+_list, never pluralize (name_list NOT names)
-   d verb_form           - Use present tense base verbs without modifiers for clarity
+                           element IDs; . Don't leave anything out that you can name!
+   b case_format         - All codenames in snake_case (user_name not userName) 
+   c boolean_naming      - End with _is for boolean variables (example: visible_is, active_is, valid_is)
+   d plurality           - Use singular+_list, never pluralize (name_list NOT names)
+   e verb_form           - Use present tense base verbs without modifiers for clarity
 
 2a4_ verb_form           - Use present tense base verbs without modifiers
    a simple_form         - use enable, not enabled for consistency and clarity

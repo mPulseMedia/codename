@@ -1,6 +1,12 @@
-||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
-
 prompt_2a_setup         - Initialize vanilla JavaScript project with essential tooling and config
+
+2a0_ simplicity          - Keep project structure minimal and practical
+   a min_structure      - Create directories only when multiple related files exist
+   b just_in_time       - Add new files/directories only when actually needed
+   c org_growth         - Allow structure to grow organically based on project needs
+   d implementation     - Prioritize working code over theoretical "perfect" architecture
+   e explicit_only      - Implement ONLY features explicitly requested in the prompts
+   f no_extras          - Do NOT add "nice-to-have" features, files, or functionality that wasn't specified
 
 2a1_ init               - Create comprehensive vanilla JavaScript project structure
    a generate           - Basic project structure with index.html and core assets
@@ -82,8 +88,6 @@ prompt_2c_naming        - Establish codename conventions and standards for consi
    c document_rationale - Behind codename decisions to explain the system architecture
    d create_reference   - Quick reference for common codename patterns and their usage
 
-||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
-
 --------------------------------------------------------------------------------
 
 prompt_2d_review        - Review project structure, codename conventions, functionality and docs
@@ -111,7 +115,5 @@ prompt_2d_review        - Review project structure, codename conventions, functi
    b ensure_convention  - Codename convention documentation is complete and up-to-date
    c document_decisions - Any decisions or changes made during review for future reference
    d create_improvements - List of recommendations for future improvements to the architecture
-
-||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
 
 --------------------------------------------------------------------------------
