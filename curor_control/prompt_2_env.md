@@ -32,11 +32,23 @@ prompt_2a_setup         - Initialize vanilla JavaScript project with essential t
    c test_css           - CSS styling application renders correctly across viewports
    d confirm_deps       - All dependencies are functional and properly integrated
 
+2a5_ hello_world        - Create minimal hello world app to verify environment setup
+   a create_html        - Create index.html with basic structure and "Hello, World!" heading
+   b add_script         - Add main.js with console.log("Hello World from JavaScript!")
+   c add_style          - Include minimal CSS to style the hello world text
+   d test_app           - Start development server and open http://localhost:3000 to verify
+
 --------------------------------------------------------------------------------
 
-prompt_2b_struct        - Establish project structure with folders, components and assets
+prompt_2b_struct        - Establish project structure with folders, components and assets (when needed beyond minimal hello world)
 
-2b1_ folders            - Establish folder structure for the project organization
+2b0_ minimal_first      - Start with absolute minimal structure for initial hello world app
+   a flat_structure     - Place files in root directory for simplest possible organization
+   b single_files       - Use single HTML, CSS, and JS files for hello world demonstration
+   c no_extras          - Avoid creating unnecessary directories or config files
+   d expand_later       - Only expand structure as needed for additional requirements
+
+2b1_ folders            - Establish folder structure for the project organization (only as needed)
    a create_src         - Main source directory for JavaScript files and application logic
    b set_up_modules     - Modular code organization for better maintainability and reuse
    c create_lib         - Directory for utility functions and helpers for common operations
