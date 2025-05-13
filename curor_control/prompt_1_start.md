@@ -51,5 +51,3 @@ prompt_1_start          - Define core workflow rules for project execution
    c incremental_dev    - Develop incrementally through defined prompt sequence
 
 --------------------------------------------------------------------------------
-
-<< YOU ARE HERE >> 
