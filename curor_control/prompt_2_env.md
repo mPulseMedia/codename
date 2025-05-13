@@ -38,6 +38,8 @@ prompt_2a_setup         - Initialize vanilla JavaScript project with essential t
    c add_style          - Include minimal CSS to style the hello world text
    d test_app           - Start development server and open http://localhost:3000 to verify
 
+||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
+
 --------------------------------------------------------------------------------
 
 prompt_2b_struct        - Establish project structure with folders, components and assets (when needed beyond minimal hello world)
