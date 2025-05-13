@@ -27,7 +27,30 @@ A tool for maintaining consistent naming conventions in code, providing an inter
 
 ## Project Structure
 
-- `index.html` - Main entry point
-- `main.js` - Core JavaScript functionality
-- `style.css` - Styling for the application
-- Additional files and folders will be added as the project evolves
+- `/` - Root directory with main HTML entry point
+  - `index.html` - Main entry point
+  - `src/` - Source code directory
+    - `main.js` - Core application initialization
+    - `components/` - UI components
+    - `lib/` - Utility functions and helpers
+  - `assets/` - Static resources
+    - `styles/` - CSS styles
+    - `images/` - Image resources
+    - `fonts/` - Font files
+  - `docs/` - Documentation
+    - `codename_conventions.md` - General naming conventions
+    - `component_naming.md` - Component-specific naming guidelines
+    - `code_style.md` - Code style and formatting guidelines
+    - `codename_reference.md` - Quick reference for common patterns
+    - `project_review.md` - Comprehensive project structure review
+    - `improvement_roadmap.md` - Future enhancement recommendations
+
+## Codename Conventions
+
+All identifiers in this project follow our codename conventions:
+- Variables: `descriptive_name`
+- Booleans: end with `_is` (e.g., `visible_is`, `active_is`)
+- Lists: singular + `_list` (e.g., `user_list`, not `users`)
+- Functions: `verb_noun` format (e.g., `element_create`, not `createElement`)
+
+For detailed documentation on naming conventions, see the files in the `docs/` directory.

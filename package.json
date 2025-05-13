@@ -2,7 +2,7 @@
   "name": "codename",
   "version": "1.0.0",
   "description": "A tool for maintaining consistent naming conventions in code",
-  "main": "main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "serve -s .",
     "dev": "serve -s . -l 3000"
