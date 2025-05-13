@@ -1,4 +1,4 @@
-# Codename2 Project
+# Codename Project
 
 A tool for maintaining consistent naming conventions in code, providing an interactive index of code naming patterns.
 
