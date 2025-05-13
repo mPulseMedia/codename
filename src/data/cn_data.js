@@ -1,7 +1,7 @@
 /**
  * Codename Data Collections - Core data structures for codename categorization
  */
-import { cn_type_enum, cn_object_create } from './cn_schema.js';
+import { cn_type_enum, cn_object_create, root_group_object_create } from './cn_schema.js';
 
 // Function name collection
 const cn_func_list = [

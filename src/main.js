@@ -10,149 +10,9 @@ import filter_component_create from './components/filter_component.js';
 import search_component_create from './components/search_component.js';
 import lookup_component_create from './components/lookup_component.js';
 
-// Instead of importing, we'll create mock objects 
-// that simulate the behavior of our data modules
-const CodenameDM = {
-    initialize: function() {
-        console.log("cn_init: initializing codename data module");
-        this.mockData();
-        return true;
-    },
-    
-    mockData: function() {
-        // Create some sample codenames for demonstration
-        this.allCodenames = [
-            { name: 'element_create', type: 'function', description: 'Creates a DOM element with attributes and children' },
-            { name: 'element_append', type: 'function', description: 'Appends a child element to a parent element' },
-            { name: 'element_remove', type: 'function', description: 'Removes an element from the DOM' },
-            { name: 'data_fetch', type: 'function', description: 'Fetches data from a specified URL' },
-            { name: 'data_save', type: 'function', description: 'Saves data to localStorage' },
-            { name: 'app_container', type: 'variable', description: 'Main container for the application' },
-            { name: 'current_filter', type: 'variable', description: 'Current active filter configuration' },
-            { name: 'debug_mode_is', type: 'variable', description: 'Whether debug mode is enabled' },
-            { name: 'theme_current', type: 'variable', description: 'Current application theme (light/dark)' },
-            { name: 'filter_panel', type: 'class', description: 'Filter controls panel' },
-            { name: 'search_input', type: 'class', description: 'Search input field' },
-            { name: 'root_group', type: 'class', description: 'Root grouping container' },
-            { name: 'element_tag', type: 'parameter', description: 'HTML tag for element creation' },
-            { name: 'event_type', type: 'parameter', description: 'Type of event to listen for' },
-            { name: 'element_children', type: 'parameter', description: 'Child elements to append' },
-            { name: 'color_function', type: 'constant', description: 'Color code for function codenames' },
-            { name: 'color_variable', type: 'constant', description: 'Color code for variable codenames' },
-            { name: 'click_event', type: 'event', description: 'Mouse click event' },
-            { name: 'load_event', type: 'event', description: 'Page load event' },
-            { name: 'filter_func_on', type: 'property', description: 'Function filter toggle state' },
-            { name: 'root_expanded_is', type: 'property', description: 'Whether a root group is expanded' },
-            { name: 'index_html', type: 'file', description: 'Main HTML entry point' },
-            { name: 'main_js', type: 'file', description: 'Main JavaScript entry point' }
-        ];
-        
-        // Organize by root
-        this.rootGroups = {};
-        this.allCodenames.forEach(codename => {
-            const root = this.extractRoot(codename.name);
-            if (!this.rootGroups[root]) {
-                this.rootGroups[root] = [];
-            }
-            this.rootGroups[root].push(codename);
-        });
-    },
-    
-    extractRoot: function(codename) {
-        const parts = codename.split('_');
-        return parts[0] || '';
-    },
-    
-    extractTerms: function(codename) {
-        return codename.split('_').map((term, index) => {
-            return {
-                text: term,
-                position: index,
-                type: index === 0 ? 'root' : null
-            };
-        });
-    },
-    
-    getAll: function() {
-        return this.allCodenames || [];
-    },
-    
-    getByType: function(type) {
-        return (this.allCodenames || []).filter(cn => cn.type === type.toLowerCase());
-    },
-    
-    getRootGroups: function() {
-        return this.rootGroups || {};
-    }
-};
-
-const SnippetDM = {
-    initialize: function() {
-        console.log("snippet_init: initializing snippet data module");
-        this.mockSnippets();
-        return true;
-    },
-    
-    mockSnippets: function() {
-        this.snippets = {
-            'element_create': [
-                {
-                    code: `const button = element_create('button', {
-    class: 'button button_primary',
-    type: 'button',
-    text: 'Click me'
-});
-
-document.body.appendChild(button);`,
-                    language: 'javascript',
-                    description: 'Creating a button element'
-                }
-            ],
-            'data_save': [
-                {
-                    code: `data_save('user_settings', {
-    theme: 'dark',
-    fontSize: 16,
-    notifications_is: true
-});`,
-                    language: 'javascript',
-                    description: 'Saving user settings'
-                }
-            ],
-            'filter_panel': [
-                {
-                    code: `<div class="filter_panel">
-    <div class="filter_search">
-        <input type="text" class="search_input" placeholder="Search codenames...">
-        <button class="search_clear">×</button>
-    </div>
-    <div class="filter_buttons">
-        <button class="filter_button filter_button_function filter_button_active">Functions</button>
-        <button class="filter_button filter_button_variable">Variables</button>
-        <button class="filter_button filter_button_class">Classes</button>
-    </div>
-</div>`,
-                    language: 'html',
-                    description: 'Filter panel HTML structure'
-                }
-            ]
-        };
-    },
-    
-    getSnippets: function(codename) {
-        return this.snippets[codename] || [];
-    },
-    
-    formatCode: function(code, language) {
-        // Simple HTML escape for code
-        const escaped = code
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;');
-        
-        return `<pre><code class="language-${language}">${escaped}</code></pre>`;
-    }
-};
+// Import data modules
+import CodenameDM from './data/cn_access.js';
+import SnippetDM from './data/snippet_access.js';
 
 /**
  * 5b0_element_factory - Core DOM Element Factory Functions
@@ -288,7 +148,7 @@ const cn_element_create = (codename) => {
     });
     
     // Extract and display terms
-    const term_container = term_container_create(codename.name);
+    const term_container = term_container_create(codename);
     cn_container.appendChild(term_container);
     
     return cn_container;
@@ -299,7 +159,7 @@ const term_container_create = (codename) => {
     const container = element_create('div', { class: 'term_container' });
     
     // Extract terms
-    const terms = CodenameDM.extractTerms(codename);
+    const terms = CodenameDM.extractTerms(codename.name);
     
     // Create term elements
     terms.forEach((term, index) => {
