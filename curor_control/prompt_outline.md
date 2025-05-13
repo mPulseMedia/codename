@@ -1,4 +1,4 @@
-prompt_1_start          - Define core workflow rules for project execution
+1_start                 - Define core workflow rules for project execution
 
 2 env                   - Establish vanilla JavaScript foundation
 2a_setup                - Initialize vanilla JavaScript foundation with minimal dependencies

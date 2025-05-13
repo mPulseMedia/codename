@@ -1,4 +1,4 @@
-rule_name: rule_2b_convention
+rule_2b_convention
 
 2b_ convention           - Conventions for using prompts in the development process
 
@@ -66,7 +66,7 @@ rule_name: rule_2b_convention
 
 --------------------------------------------------------------------------------
 
-rule_name: rule_2c_format
+rule_2c_format
 
 2c_ format               - Formatting rules for all prompt files in the project codebase
 
@@ -164,7 +164,7 @@ rule_name: rule_2c_format
 
 --------------------------------------------------------------------------------
 
-rule_name: rule_2d_comm
+rule_2d_comm
 
 2d_ chat_comm            - Rules for chat communication about prompts and documentation
 
