@@ -1,5 +1,3 @@
-||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
-
 --------------------------------------------------------------------------------
 
 prompt_1_start         - Define core workflow rules for project execution
@@ -28,5 +26,7 @@ prompt_1_start         - Define core workflow rules for project execution
 1e_ project_goal       - Build complete application following structured methodology
    a incremental_dev   - Develop incrementally through defined prompt sequence
    b quality_focus     - Ensure high-quality implementation meeting all requirements
+
+||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
 
 --------------------------------------------------------------------------------

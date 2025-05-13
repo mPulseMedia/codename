@@ -1,3 +1,5 @@
+||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
+
 prompt_2a_setup         - Initialize vanilla JavaScript project with essential tooling and config
 
 2a1_ init               - Create comprehensive vanilla JavaScript project structure
@@ -80,6 +82,8 @@ prompt_2c_naming        - Establish codename conventions and standards for consi
    c document_rationale - Behind codename decisions to explain the system architecture
    d create_reference   - Quick reference for common codename patterns and their usage
 
+||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
+
 --------------------------------------------------------------------------------
 
 prompt_2d_review        - Review project structure, codename conventions, functionality and docs
@@ -107,5 +111,7 @@ prompt_2d_review        - Review project structure, codename conventions, functi
    b ensure_convention  - Codename convention documentation is complete and up-to-date
    c document_decisions - Any decisions or changes made during review for future reference
    d create_improvements - List of recommendations for future improvements to the architecture
+
+||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
 
 --------------------------------------------------------------------------------
