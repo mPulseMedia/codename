@@ -10,9 +10,9 @@
 const reveal_component_create = (container) => {
     // Private state
     let reveal_state = {
-        active: false,
+        active_is: false,
         highlighted_elements: [],
-        tooltip_visible: false,
+        tooltip_visible_is: false,
         active_tooltip: null,
         codename_registry: {},
         highlight_class: 'codename_highlight',
@@ -22,6 +22,99 @@ const reveal_component_create = (container) => {
     // DOM references
     let control_panel = null;
     let tooltip = null;
+    
+    /**
+     * Activate reveal functionality
+     */
+    const activate_reveal = () => {
+        // Process content containers
+        process_content_containers();
+        
+        // Set up global click listener to close tooltip
+        document.addEventListener('click', document_click_handler);
+        
+        // Create tooltip if it doesn't exist
+        if (!tooltip) {
+            tooltip = create_tooltip();
+        }
+    };
+    
+    /**
+     * Helper function to capitalize first letter
+     * @param {string} string - String to capitalize
+     * @returns {string} Capitalized string
+     */
+    const capitalize = (string) => {
+        if (!string) return '';
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    };
+    
+    /**
+     * Collect text nodes from a container
+     * @param {Node} node - Starting node
+     * @param {Array} result - Array to collect text nodes into
+     */
+    const collect_text_nodes = (node, result) => {
+        if (node.nodeType === Node.TEXT_NODE) {
+            result.push(node);
+        } else {
+            for (const child of node.childNodes) {
+                collect_text_nodes(child, result);
+            }
+        }
+    };
+    
+    /**
+     * Create codename info object from codename text
+     * @param {string} codename - Codename text
+     * @returns {Object} Codename info object
+     */
+    const create_codename_info = (codename) => {
+        // In a real implementation, this would look up the codename in a registry
+        // For now, we'll generate some basic info based on the codename format
+        
+        // Parse parts
+        const parts = codename.split('_');
+        const root = parts[0];
+        
+        // Guess the type based on common patterns
+        let type = 'unknown';
+        let description = '';
+        
+        if (codename.endsWith('_is')) {
+            type = 'variable';
+            description = 'Boolean flag indicating a state';
+        } else if (parts.length >= 2) {
+            // Check common verb prefixes for functions
+            const common_verbs = ['get', 'set', 'create', 'update', 'delete', 'add', 'remove', 'load', 'save', 'find', 'process', 'validate'];
+            if (common_verbs.includes(parts[0])) {
+                type = 'function';
+                description = `${capitalize(parts[0])}s ${parts.slice(1).join(' ')}`;
+            }
+            // Check for common container suffixes
+            else if (['list', 'array', 'collection', 'set', 'map', 'container'].includes(parts[parts.length - 1])) {
+                type = 'variable';
+                description = `Collection of ${parts.slice(0, -1).join(' ')}`;
+            }
+            // Check for component/container patterns
+            else if (['component', 'container', 'panel', 'view'].includes(parts[parts.length - 1])) {
+                type = 'class';
+                description = `UI component for ${parts.slice(0, -1).join(' ')}`;
+            }
+            else {
+                // Default to variable
+                type = 'variable';
+                description = parts.join(' ');
+            }
+        }
+        
+        return {
+            name: codename,
+            type: type,
+            description: description,
+            root: root
+        };
+    };
     
     /**
      * Create control panel for reveal functionality
@@ -35,10 +128,10 @@ const reveal_component_create = (container) => {
         const toggle_button = document.createElement('button');
         toggle_button.className = 'reveal_toggle_button';
         toggle_button.innerHTML = '<span class="reveal_icon">👁️</span><span class="reveal_text">Reveal Codenames</span>';
-        toggle_button.setAttribute('aria-pressed', reveal_state.active);
+        toggle_button.setAttribute('aria-pressed', reveal_state.active_is);
         toggle_button.addEventListener('click', () => {
             toggle_reveal();
-            toggle_button.setAttribute('aria-pressed', reveal_state.active);
+            toggle_button.setAttribute('aria-pressed', reveal_state.active_is);
         });
         
         // Create info text
@@ -118,44 +211,6 @@ const reveal_component_create = (container) => {
     };
     
     /**
-     * Toggle reveal functionality on/off
-     */
-    const toggle_reveal = () => {
-        reveal_state.active = !reveal_state.active;
-        
-        if (reveal_state.active) {
-            activate_reveal();
-        } else {
-            deactivate_reveal();
-        }
-        
-        // Update button state
-        const toggle_button = document.querySelector('.reveal_toggle_button');
-        if (toggle_button) {
-            toggle_button.classList.toggle('reveal_active', reveal_state.active);
-            toggle_button.setAttribute('aria-pressed', reveal_state.active);
-        }
-        
-        console.log(`reveal_toggle: reveal mode ${reveal_state.active ? 'activated' : 'deactivated'}`);
-    };
-    
-    /**
-     * Activate reveal functionality
-     */
-    const activate_reveal = () => {
-        // Process content containers
-        process_content_containers();
-        
-        // Set up global click listener to close tooltip
-        document.addEventListener('click', document_click_handler);
-        
-        // Create tooltip if it doesn't exist
-        if (!tooltip) {
-            tooltip = create_tooltip();
-        }
-    };
-    
-    /**
      * Deactivate reveal functionality
      */
     const deactivate_reveal = () => {
@@ -177,25 +232,15 @@ const reveal_component_create = (container) => {
     };
     
     /**
-     * Process content containers to find and highlight codenames
+     * Document click handler to hide tooltip when clicking outside
      */
-    const process_content_containers = () => {
-        // Find all content containers in the page
-        const content_containers = find_content_containers();
-        
-        // Process each container
-        content_containers.forEach(container => {
-            // Skip if already processed
-            if (reveal_state.processed_containers.has(container)) {
-                return;
+    const document_click_handler = (event) => {
+        if (reveal_state.tooltip_visible_is) {
+            // Check if click was inside the tooltip
+            if (tooltip && !tooltip.contains(event.target)) {
+                hide_tooltip();
             }
-            
-            // Mark as processed
-            reveal_state.processed_containers.add(container);
-            
-            // Scan for codenames
-            scan_for_codenames(container);
-        });
+        }
     };
     
     /**
@@ -211,49 +256,6 @@ const reveal_component_create = (container) => {
         ];
         
         return containers;
-    };
-    
-    /**
-     * Scan a container for codenames
-     * @param {HTMLElement} container - Container to scan
-     */
-    const scan_for_codenames = (container) => {
-        // Get container text
-        const text = container.textContent;
-        
-        // Regular expression for codenames (snake_case pattern)
-        const regex = /\b([a-z]+(_[a-z]+)+)\b/g;
-        
-        // Find matches
-        let match;
-        const matches = [];
-        while ((match = regex.exec(text)) !== null) {
-            matches.push({
-                text: match[0],
-                index: match.index,
-                length: match[0].length
-            });
-        }
-        
-        // Highlight matches if found
-        if (matches.length > 0) {
-            highlight_matches(container, matches);
-        }
-    };
-    
-    /**
-     * Highlight codename matches in the container
-     * @param {HTMLElement} container - Container element
-     * @param {Array} matches - Array of matches to highlight
-     */
-    const highlight_matches = (container, matches) => {
-        // For each match, we need to find the actual text node containing it
-        matches.forEach(match => {
-            const range = find_text_range(container, match.text, match.index);
-            if (range) {
-                highlight_range(range, match.text);
-            }
-        });
     };
     
     /**
@@ -294,18 +296,36 @@ const reveal_component_create = (container) => {
     };
     
     /**
-     * Collect text nodes from a container
-     * @param {Node} node - Starting node
-     * @param {Array} result - Array to collect text nodes into
+     * Hide the tooltip
      */
-    const collect_text_nodes = (node, result) => {
-        if (node.nodeType === Node.TEXT_NODE) {
-            result.push(node);
-        } else {
-            for (const child of node.childNodes) {
-                collect_text_nodes(child, result);
-            }
+    const hide_tooltip = () => {
+        if (!tooltip) return;
+        
+        // Hide tooltip
+        tooltip.style.display = 'none';
+        
+        // Clear active state
+        if (reveal_state.active_tooltip && reveal_state.active_tooltip.element) {
+            reveal_state.active_tooltip.element.removeAttribute('data-tooltip-active');
         }
+        
+        reveal_state.tooltip_visible_is = false;
+        reveal_state.active_tooltip = null;
+    };
+    
+    /**
+     * Highlight codename matches in the container
+     * @param {HTMLElement} container - Container element
+     * @param {Array} matches - Array of matches to highlight
+     */
+    const highlight_matches = (container, matches) => {
+        // For each match, we need to find the actual text node containing it
+        matches.forEach(match => {
+            const range = find_text_range(container, match.text, match.index);
+            if (range) {
+                highlight_range(range, match.text);
+            }
+        });
     };
     
     /**
@@ -355,92 +375,18 @@ const reveal_component_create = (container) => {
     };
     
     /**
-     * Create codename info object from codename text
-     * @param {string} codename - Codename text
-     * @returns {Object} Codename info object
+     * Initialize the reveal component
      */
-    const create_codename_info = (codename) => {
-        // In a real implementation, this would look up the codename in a registry
-        // For now, we'll generate some basic info based on the codename format
+    const initialize = () => {
+        console.log('reveal_initialize: initializing reveal component');
         
-        // Parse parts
-        const parts = codename.split('_');
-        const root = parts[0];
+        // Create control panel
+        control_panel = create_control_panel();
+        container.appendChild(control_panel);
         
-        // Guess the type based on common patterns
-        let type = 'unknown';
-        let description = '';
+        console.log('reveal_initialize_complete: reveal component initialized');
         
-        if (codename.endsWith('_is')) {
-            type = 'variable';
-            description = 'Boolean flag indicating a state';
-        } else if (parts.length >= 2) {
-            // Check common verb prefixes for functions
-            const common_verbs = ['get', 'set', 'create', 'update', 'delete', 'add', 'remove', 'load', 'save', 'find', 'process', 'validate'];
-            if (common_verbs.includes(parts[0])) {
-                type = 'function';
-                description = `${capitalize(parts[0])}s ${parts.slice(1).join(' ')}`;
-            }
-            // Check for common container suffixes
-            else if (['list', 'array', 'collection', 'set', 'map', 'container'].includes(parts[parts.length - 1])) {
-                type = 'variable';
-                description = `Collection of ${parts.slice(0, -1).join(' ')}`;
-            }
-            // Check for component/container patterns
-            else if (['component', 'container', 'panel', 'view'].includes(parts[parts.length - 1])) {
-                type = 'class';
-                description = `UI component for ${parts.slice(0, -1).join(' ')}`;
-            }
-            else {
-                // Default to variable
-                type = 'variable';
-                description = parts.join(' ');
-            }
-        }
-        
-        return {
-            name: codename,
-            type: type,
-            description: description,
-            root: root
-        };
-    };
-    
-    /**
-     * Show tooltip for a codename
-     * @param {HTMLElement} element - The highlighted element
-     * @param {Object} codename_info - Codename info object
-     */
-    const show_tooltip = (element, codename_info) => {
-        if (!tooltip) return;
-        
-        // Hide any existing tooltip
-        hide_tooltip();
-        
-        // Update tooltip content
-        tooltip.querySelector('.tooltip_title').textContent = codename_info.name;
-        tooltip.querySelector('.tooltip_badge').textContent = codename_info.type;
-        tooltip.querySelector('.tooltip_badge').className = `tooltip_badge badge_${codename_info.type}`;
-        tooltip.querySelector('.tooltip_description').textContent = codename_info.description;
-        
-        // Store codename reference
-        tooltip.setAttribute('data-codename', codename_info.name);
-        
-        // Position tooltip
-        position_tooltip(element);
-        
-        // Show tooltip
-        tooltip.style.display = 'block';
-        
-        // Set active state
-        reveal_state.tooltip_visible = true;
-        reveal_state.active_tooltip = {
-            element: element,
-            codename: codename_info.name
-        };
-        
-        // Track tooltip visibility on element
-        element.setAttribute('data-tooltip-active', 'true');
+        return control_panel;
     };
     
     /**
@@ -471,37 +417,57 @@ const reveal_component_create = (container) => {
     };
     
     /**
-     * Hide the tooltip
+     * Process content containers to find and highlight codenames
      */
-    const hide_tooltip = () => {
-        if (!tooltip) return;
+    const process_content_containers = () => {
+        // Find all content containers in the page
+        const content_containers = find_content_containers();
         
-        // Hide tooltip
-        tooltip.style.display = 'none';
-        
-        // Clear active state
-        if (reveal_state.active_tooltip && reveal_state.active_tooltip.element) {
-            reveal_state.active_tooltip.element.removeAttribute('data-tooltip-active');
-        }
-        
-        reveal_state.tooltip_visible = false;
-        reveal_state.active_tooltip = null;
-    };
-    
-    /**
-     * Document click handler to hide tooltip when clicking outside
-     */
-    const document_click_handler = (event) => {
-        if (reveal_state.tooltip_visible) {
-            // Check if click was inside the tooltip
-            if (tooltip && !tooltip.contains(event.target)) {
-                hide_tooltip();
+        // Process each container
+        content_containers.forEach(container => {
+            // Skip if already processed
+            if (reveal_state.processed_containers.has(container)) {
+                return;
             }
+            
+            // Mark as processed
+            reveal_state.processed_containers.add(container);
+            
+            // Scan for codenames
+            scan_for_codenames(container);
+        });
+    };
+    
+    /**
+     * Scan a container for codenames
+     * @param {HTMLElement} container - Container to scan
+     */
+    const scan_for_codenames = (container) => {
+        // Get container text
+        const text = container.textContent;
+        
+        // Regular expression for codenames (snake_case pattern)
+        const regex = /\b([a-z]+(_[a-z]+)+)\b/g;
+        
+        // Find matches
+        let match;
+        const matches = [];
+        while ((match = regex.exec(text)) !== null) {
+            matches.push({
+                text: match[0],
+                index: match.index,
+                length: match[0].length
+            });
+        }
+        
+        // Highlight matches if found
+        if (matches.length > 0) {
+            highlight_matches(container, matches);
         }
     };
     
     /**
-     * Show detailed information for a codename
+     * Show codename details for a codename
      * @param {Object} codename_info - Codename info object
      */
     const show_codename_details = (codename_info) => {
@@ -521,6 +487,65 @@ const reveal_component_create = (container) => {
     };
     
     /**
+     * Show tooltip for a codename
+     * @param {HTMLElement} element - The highlighted element
+     * @param {Object} codename_info - Codename info object
+     */
+    const show_tooltip = (element, codename_info) => {
+        if (!tooltip) return;
+        
+        // Hide any existing tooltip
+        hide_tooltip();
+        
+        // Update tooltip content
+        tooltip.querySelector('.tooltip_title').textContent = codename_info.name;
+        tooltip.querySelector('.tooltip_badge').textContent = codename_info.type;
+        tooltip.querySelector('.tooltip_badge').className = `tooltip_badge badge_${codename_info.type}`;
+        tooltip.querySelector('.tooltip_description').textContent = codename_info.description;
+        
+        // Store codename reference
+        tooltip.setAttribute('data-codename', codename_info.name);
+        
+        // Position tooltip
+        position_tooltip(element);
+        
+        // Show tooltip
+        tooltip.style.display = 'block';
+        
+        // Set active state
+        reveal_state.tooltip_visible_is = true;
+        reveal_state.active_tooltip = {
+            element: element,
+            codename: codename_info.name
+        };
+        
+        // Track tooltip visibility on element
+        element.setAttribute('data-tooltip-active', 'true');
+    };
+    
+    /**
+     * Toggle reveal functionality on/off
+     */
+    const toggle_reveal = () => {
+        reveal_state.active_is = !reveal_state.active_is;
+        
+        if (reveal_state.active_is) {
+            activate_reveal();
+        } else {
+            deactivate_reveal();
+        }
+        
+        // Update button state
+        const toggle_button = document.querySelector('.reveal_toggle_button');
+        if (toggle_button) {
+            toggle_button.classList.toggle('reveal_active', reveal_state.active_is);
+            toggle_button.setAttribute('aria-pressed', reveal_state.active_is);
+        }
+        
+        console.log(`reveal_toggle: reveal mode ${reveal_state.active_is ? 'activated' : 'deactivated'}`);
+    };
+    
+    /**
      * Remove highlighting from an element
      * @param {HTMLElement} element - Element to unhighlight
      */
@@ -536,44 +561,19 @@ const reveal_component_create = (container) => {
         element.parentNode.replaceChild(text_node, element);
     };
     
-    /**
-     * Helper function to capitalize first letter
-     * @param {string} string - String to capitalize
-     * @returns {string} Capitalized string
-     */
-    const capitalize = (string) => {
-        if (!string) return '';
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    };
-    
-    /**
-     * Initialize the reveal component
-     */
-    const initialize = () => {
-        console.log('reveal_initialize: initializing reveal component');
-        
-        // Create control panel
-        control_panel = create_control_panel();
-        container.appendChild(control_panel);
-        
-        console.log('reveal_initialize_complete: reveal component initialized');
-        
-        return control_panel;
-    };
-    
     // Public API
     return {
         initialize,
         
         // Control methods
         activate: () => {
-            if (!reveal_state.active) {
+            if (!reveal_state.active_is) {
                 toggle_reveal();
             }
         },
         
         deactivate: () => {
-            if (reveal_state.active) {
+            if (reveal_state.active_is) {
                 toggle_reveal();
             }
         },
@@ -588,11 +588,11 @@ const reveal_component_create = (container) => {
         },
         
         // State access
-        is_active: () => reveal_state.active,
+        is_active: () => reveal_state.active_is,
         
         // Force re-scan
         rescan: () => {
-            if (reveal_state.active) {
+            if (reveal_state.active_is) {
                 process_content_containers();
             }
         }
