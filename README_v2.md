@@ -9,5 +9,5 @@ A tool for maintaining consistent naming conventions in code, providing an inter
 
 ### Documentation Files
 - **Prompt Files** (`prompt_#_name.md`): Step-by-step development tasks. Start with `prompt_1_start.md`.
-- **Rule Files** (`rule_#_name.md`): Conventions and formatting standards. See `rule_1_codename.md` and `rule_2_format.md`.
+- **Rule Files** (`rule_#_name.md`): Conventions and formatting standards. See `rule_2_codename.md` and `rule_3_format.md`.
 - **Requirement Files** (`req_#_name.md`): Detailed feature specifications.

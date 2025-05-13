@@ -1,55 +1,32 @@
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< YOU ARE HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+||||||||||||||||||||||||||||||||| YOU ARE HERE |||||||||||||||||||||||||||||||||
 
 --------------------------------------------------------------------------------
 
 prompt_1_start         - Define core workflow rules for project execution
 
-1a_ go                 - When I type "go" in chat, locate the << YOU ARE HERE >> marker 
-  1 locate_marker      - Find the marker in prompt files to determine next actions
-  2 retrieve_segment   - Retrieve and process the next prompt segment for execution
+1a_ prompt_flow        - Use rule_1_prompt.md as the primary guide for prompt processing workflow
+  1 go_command         - When "go" is typed in chat, locate the marker and process next prompt
+  2 follow_rules       - Adhere to all principles defined in rule_1_prompt.md
 
-1b_ step               - Only execute one step of the prompt at a time for controlled progress
-  1 single_execution   - Execute just one prompt segment before awaiting further instruction
-  2 bounded_scope      - Maintain clear boundaries around the current execution scope
-  3 up to HERE         - Don't jump ahead. Don't execute steps beyond << YOU ARE HERE >>
+1b_ marker             - For this first prompt, only update the marker position
+  1 marker_update      - Move the marker down after understanding these instructions
+  2 no_execution       - Don't execute further actions beyond marker movement at this stage
 
-1c_ wait               - For this prompt, don't execute anything beyond updating marker position
-  1 marker_update      - But do update the << YOU ARE HERE >> marker position
-
-1d_ here               - Track progress through prompt files using marker positioning
-  1 marker_movement    - Move the marker lower in the prompt file to track progress
-  2 file_progression   - Progress to next file when current file is fully processed
-
-1e_ roles              - Understand the project roles and responsibilities clearly
+1c_ roles              - Understand the project roles and responsibilities clearly
    a assistant_role    - You: AI assistant skilled in app development following PM direction
    b manager_role      - Me: Product manager who defines requirements and reviews your work
    c collaboration     - Work together through structured development and feedback cycles
 
-1f_ codename           - Use rule_codename files to understand naming conventions and structures
-  1 naming_standard    - Reference codename rules for term selection and formatting standards
-   b hierarchy         - Follow prescribed term hierarchies from codename rule files
-   c consistent_naming - Adhere to established project naming standards during implementation
+1d_ file_usage         - Understand how to use various file types throughout development
+  1 rule_files         - Reference rule_*.md files for conventions and standards:
+     a codename_rules  - rule_2_codename.md for naming conventions
+     b format_rules    - rule_3_format.md for formatting standards
+     c prompt_rules    - rule_1_prompt.md for prompt processing guidelines
+  2 prompt_files       - Follow prompt_*.md files for development instructions
+  3 req_files          - Use req_*.md files for application specifications
 
-1g_ format             - Use rule_format files to understand documentation and code formatting
-   a format_standard   - Reference format rules for documentation and code appearance
-   b alignment         - Follow prescribed alignment and spacing conventions from format files
-   c consistent_format - Maintain consistent formatting according to established standards
-
-1h_ prompt             - Use prompt_ files to retrieve and manage development instructions
-   a next_prompt       - Retrieve the next prompt to process based on marker position
-   b preview_upcoming  - Preview and understand upcoming prompt segments for context
-   c modify_prompts    - Modify upcoming prompts if needed to adapt to project changes
-
-1i_ req                - Use req_ files to understand application requirements and specifications
-   a requirements      - Refer to requirement files for functional specifications
-   b feature_details   - Review detailed feature requirements before implementation
-   c compliance_check  - Ensure implementations comply with documented requirements
-
-1j_ future prompts     - Review and improve furute prompts, creating new files if needed
-
-1k_ project            - Help develop complete application following structured methodology
-   a complete_app      - Build fully functional application meeting all requirements
-   b structur_approach - Follow the defined process and architectural approaches
-   c incremental_dev   - Develop incrementally through defined prompt sequence
+1e_ project_goal       - Build complete application following structured methodology
+   a incremental_dev   - Develop incrementally through defined prompt sequence
+   b quality_focus     - Ensure high-quality implementation meeting all requirements
 
 --------------------------------------------------------------------------------
