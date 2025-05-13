@@ -6,6 +6,8 @@ prompt_2a_setup         - Initialize vanilla JavaScript project with essential t
    c set_up             - ESLint for code quality and consistent formatting standards
    d initialize         - Git repository with .gitignore for proper version control
 
+<< YOU ARE HERE >> 
+
 2a2_ depend             - Install minimal yet essential required packages and tools
    a add_css            - Basic CSS structure and reset for consistent styling
    b install_utils      - Utility libraries for core functionality and common operations
