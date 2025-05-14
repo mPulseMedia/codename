@@ -1,0 +1,54 @@
+////////////////////////////////////////////////////////////////////////////////
+
+rule_00_outline
+
+rule_01_codename       - Naming conventions and codename rules
+
+r_1a__ choice             - Choose words carefully
+r_1b__ form              - Form verbs properly
+r_1c__ abbr              - Abbreviate appropriately
+r_1d__ length             - Length of terms
+r_1e__ structure          - Structure fundamentals
+r_1f__ roots              - Fundamental app root terms
+r_1g__ new                - New root creation
+r_1h__ format             - Format and alignment guidelines
+r_1i__ align              - Align symbol usage
+r_1j__ order              - Order codenames logically
+r_1k__ compact            - Compact code layout
+
+rule_02_prompt         - Prompt terminology and processing guidelines
+
+r_2a__ terms            - Standard prompt terminology
+r_2b__ process          - Process for prompts
+r_2c__ marker           - Marker usage and movement
+r_2d__ implement        - Implementing prompts efficiently
+r_2e__ document         - Documenting process
+r_2f__ brevity          - Brief chat messages
+r_2g__ outline          - Outline prompt format
+r_2h__ convention        - Prompt convention usage
+r_2i__ intro             - Format introductions
+r_2j__ style              - Style summaries
+r_2k__ reuse              - Reuse prompts
+r_2l__ version            - Version control
+
+rule_03_format         - Document formatting and structure standards
+
+r_3m__ files             - File naming conventions
+r_3j__ format            - Document formatting
+r_3k__ structure         - Document structure
+r_3r__ header            - File header format
+r_3s__ separator         - Visual divider between sections
+r_3l__ display           - Group display format
+r_3o__ numbering         - Rule numbering system
+r_3n__ rules             - Rule format standards
+r_3p__ tasks             - Task name formatting
+r_3q__ dash              - Dash and description formatting
+r_3c__ naming            - File and section naming rules
+r_3x__ outline           - Outline file format and usage
+r_3u__ communicate       - Communication guidelines
+r_3v__ reference         - Code references
+r_3w__ updates           - Concise updates
+
+index_codename         - Index of all codenames used in kernal files
+
+//////////////////////////////////////////////////////////////////////////////// 

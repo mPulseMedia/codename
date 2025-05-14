@@ -2,6 +2,7 @@
 
 prompt_02_tbd
 
-_2a__ _placeholder      - TBD placeholder for future tasks
+p_2a__ future           - Future development tasks
+p_2a_1    todo          - TBD placeholder for future tasks
 
 ////////////////////////////////////////////////////////////////////////////////

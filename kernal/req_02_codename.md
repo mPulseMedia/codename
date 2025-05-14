@@ -2,6 +2,7 @@
 
 req_02_codename
 
-_2a__ _requirements     - TBD app codenames
+q_2a__ name_list       - Codename convention requirements
+q_2a_1    future       - TBD app codename_list for future implementation
 
 ////////////////////////////////////////////////////////////////////////////////

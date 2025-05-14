@@ -1,0 +1,15 @@
+////////////////////////////////////////////////////////////////////////////////
+
+req_00_outline
+
+req_01_app             - Application requirements
+
+q_1a__ app             - Application requirements
+
+req_02_codename        - Codename convention requirements
+
+q_2a__ name_list       - Codename convention requirements
+
+index_codename         - Index of all codenames used in kernal files
+
+//////////////////////////////////////////////////////////////////////////////// 

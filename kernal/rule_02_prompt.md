@@ -2,68 +2,105 @@
 
 rule_02_prompt
 
-_2a__ _terminology      - Standard prompt terminology
-_2a_1    _prompt_file   - Physical markdown file containing prompts
-_2a_2    _prompt_group  - Collection of related prompts within a prompt_file
-_2a_3    _prompt        - Written prompts that were or will be entered to an AI copilot
-_2a_4    _summary       - Short description of what the prompt does and appears as the first line in the prompt
-_2a_5    _task_name     - Identifier for a task
-_2a_6    _task          - Detailed implementation instruction within a prompt
-_2a_7    _marker        - Indicator showing current execution position within prompt files
-_2a_8    _rule          - Established guidelines and constraints for project workflow
-_2a_9    _separator     - Visual divider between sections in files
-_2a10    _file          - Digital document containing structured content
-_2a11    _alignment     - Visual arrangement for readability and structure
+r_2a__ terms            - Standard prompt terminology
+r_2a_1    file          - Physical markdown file containing prompts
+r_2a_2    group         - Collection of related prompts within a prompt_file
+r_2a_3    prompt        - Written prompts that were or will be entered to an AI copilot
+r_2a_4    summary       - Short description of what the prompt does and appears as the first line in the prompt
+r_2a_5    task_name     - Name for a task 
+r_2a_6    task          - Detailed implementation instruction within a prompt
+r_2a_7    marker        - Indicator showing current execution position within prompt files
+r_2a_8    rule          - Established guidelines and constraints for project workflow
+r_2a_9    separator     - Visual divider between sections in files
+r_2a10    file          - Digital document containing structured content
+r_2a11    alignment     - Visual arrangement for readability and structure
+r_2a12    id            - Alphanumeric id pattern used in documentation (r_1a__, p_2b_3)
+r_2a13    filenum       - Two-digit number in filename (e.g., 02 in rule_02_prompt.md)
+r_2a14    file_kernal   - Collection of core files that implement the codename methodology
 
-_2b__ _process          - Process for prompts
-_2b_1    _command       - When "do" is typed in chat, locate the /// YOU ARE HERE /// marker
-_2b_2    _sync          - If markers are out of sync then first ask what to do -- because it isn't clear which one to choose
-_2b_3    _tracking      - Find the marker in prompt_files to determine next actions
-_2b_4    _retrieval     - Retrieve and process the next prompt or prompt_group for execution
-_2b_5    _control       - Only execute one prompt or prompt_group at a time for controlled progress
-_2b_6    _scope         - Maintain clear boundaries around the current execution scope
-_2b_7    _limits        - Don't create features, files, or functionality not directly requested
+r_2b__ process          - Process for prompts
+r_2b_1    command       - When "do" is typed in chat, locate the /// YOU ARE HERE /// marker
+r_2b_2    sync          - If markers are out of sync then first ask what to do -- because it isn't clear which one to choose
+r_2b_3    tracking      - Find the marker in prompt_files to determine next actions
+r_2b_4    retrieval     - Retrieve and process the next prompt or prompt_group for execution
+r_2b_5    control       - Only execute one prompt or prompt_group at a time for controlled progress
+r_2b_6    scope         - Maintain clear boundaries around the current execution scope
+r_2b_7    limits        - Don't create features, files, or functionality not directly requested
 
-_2c__ _movement         - Movement of markers
-_2c_1    _initial       - At project start, the /// YOU ARE HERE /// marker appears at the TOP of 
-                           both the prompt_00_outline.md file and the prompt_01_start.md file, before 
-                           any prompt content.
-_2c_2    _update        - IMPORTANT: After processing a prompt, move the /// YOU ARE HERE /// marker 
-                           to the BOTTOM of the prompt that was just processed as the final step.
-                           Never place the marker before or in the middle of a prompt.
-_2c_3    _sync          - Always update the marker in both the active prompt_file AND in the 
-                           prompt_00_outline file to ensure they remain synchronized.
-_2c_4    _unique        - The marker should only appear in a prompt_file and a prompt_00_outline file, and nowhere else.
-_2c_5    _progress      - Progress to next file when current file is fully processed
-_2c_6    _indicator     - Use the marker as a visual indicator of execution progress
-_2c_7    _next          - Clearly identify the next prompt based on marker position
+r_2c__ marker           - Marker usage and movement
+r_2c_1    initial       - At project start, the /// YOU ARE HERE /// marker appears at the TOP of 
+                          both the prompt_00_outline.md file and the prompt_01_start.md file, before 
+                          any prompt content
+r_2c_2    update        - IMPORTANT: After processing a prompt, move the /// YOU ARE HERE /// marker 
+                          to the BOTTOM of the prompt that was just processed as the final step
+                          Never place the marker before or in the middle of a prompt
+r_2c_3    sync          - Always update the marker in both the active prompt_file AND in the 
+                          prompt_00_outline file to ensure they remain synchronized
+r_2c_4    unique        - The marker should only appear in a prompt_file and a prompt_00_outline file, and nowhere else
+r_2c_5    progress      - Progress to next file when current file is fully processed
+r_2c_6    indicator     - Use the marker as a visual indicator of execution progress
+r_2c_7    next          - Clearly identify the next prompt based on marker position
+r_2c_8    syntax        - Use triple-slash format: /// YOU ARE HERE ///
 
-_2d__ _execution        - Executing prompts efficiently
-_2d_1    _isolation     - Execute only the relevant prompt rather than entire prompt_group or files
-_2d_2    _focus         - Keep implementation focused on current task without scope creep
-_2d_3    _completion    - Complete one prompt before moving to the next
-_2d_4    _verify        - Verify implementation meets requirements before proceeding
-_2d_5    _explicit      - Only implement what is explicitly requested, nothing more
-_2d_6    _minimal       - Use the simplest implementation that satisfies requirements
+r_2d__ implement        - Implementing prompts efficiently
+r_2d_1    isolation     - Execute only the relevant prompt rather than entire prompt_group or files
+r_2d_2    focus         - Keep implementation focused on current task without scope creep
+r_2d_3    completion    - Complete one prompt before moving to the next
+r_2d_4    verify        - Verify implementation meets requirements before proceeding
+r_2d_5    explicit      - Only implement what is explicitly requested, nothing more
+r_2d_6    minimal       - Use the simplest implementation that satisfies requirements
 
-_2e__ _documentation    - Documenting process
-_2e_1    _notes         - Add implementation notes directly after executing a prompt
-_2e_2    _outcomes      - Document specific outcomes, changes, and decisions made
-_2e_3    _challenges    - Note any challenges encountered and their resolutions
-_2e_4    _next          - Include recommendations for next steps after completion
+r_2e__ document         - Documenting process
+r_2e_1    notes         - Add implementation notes directly after executing a prompt
+r_2e_2    outcomes      - Document specific outcomes, changes, and decisions made
+r_2e_3    challenges    - Note any challenges encountered and their resolutions
+r_2e_4    next          - Include recommendations for next steps after completion
+r_2e_5    depends       - Document any dependencies created or affected by implementation
 
-_2f__ _brevity          - Brief chat messages
-_2f_1    _concise       - Keep chat responses approximately half the typical length
-_2f_2    _direct        - Provide direct, to-the-point answers without excessive explanations
-_2f_3    _essential     - Include only essential information needed to address the query
-_2f_4    _minimal       - Minimize contextual explanations unless specifically requested
-_2f_5    _action        - Focus on actions taken rather than explaining process details
-_2f_6    _examples      - Include minimal examples only when necessary for clarity
+r_2f__ brevity          - Brief chat messages
+r_2f_1    concise       - Keep chat responses approximately half the typical length
+r_2f_2    direct        - Provide direct, to-the-point answers without excessive explanations
+r_2f_3    essential     - Include only essential information needed to address the query
+r_2f_4    minimal       - Minimize contextual explanations unless specifically requested
+r_2f_5    action        - Focus on actions taken rather than explaining process details
+r_2f_6    examples      - Include minimal examples only when necessary for clarity
 
-_2g__ _outline          - Outline prompt format
-_2g_1    _toplevel      - Only include the summaries of each prompt in prompt_groups
-_2g_2    _past          - Make sure the summaries in each place match
-_2g_3    _future        - Populate future prompt summaries
-_2g_4    _marker        - Also include /// YOU ARE HERE /// marker in outline prompt_file
+r_2g__ outline          - Outline prompt format
+r_2g_1    toplevel      - Only include the summaries of each prompt in prompt_groups
+r_2g_2    past          - Make sure the summaries in each place match
+r_2g_3    future        - Populate future prompt summaries
+r_2g_4    marker        - Also include /// YOU ARE HERE /// marker in outline prompt_file
+r_2g_5    reference     - Follow general outline file rules defined in rule_03_format r_3x__
+
+r_2h__ convention        - Prompt convention usage
+r_2h_1    everything     - Start each prompt_group with a brief summary explaining purpose
+r_2h_2    summary        - Use consistent format for all prompt_summaries
+r_2h_3    name           - Use consistent identifiers (e.g., prompt_struct) as references
+r_2h_4    style          - Write tasks in present tense imperative form for clarity
+r_2h_5    reuse          - Allow revisiting and modifying prompts as needed during development
+
+r_2i__ intro             - Format introductions
+r_2i_1    overview       - Include overview of prompts with clear organizational structure
+r_2i_2    purpose        - State clear purpose summary at the beginning of each prompt_group 
+r_2i_3    concise        - Keep summary brief while providing necessary context
+r_2i_4    scannable      - Format for easy scanning with consistent visual hierarchy
+
+r_2j__ style              - Style summaries
+r_2j_1    omit            - Omit "You" when AI assistant is implied subject in prompt_summaries
+r_2j_2    action          - Use action verbs (create, implement, design) for clear direction
+r_2j_3    we              - Use "we" for collaborative review steps to indicate partnership
+r_2j_4    specificity     - Be specific about expected outcomes for each instruction point
+
+r_2k__ reuse              - Reuse prompts
+r_2k_1    iteration       - Allow for iterative refinement of prompts throughout development
+r_2k_2    modification    - Make targeted modifications to address changing requirements
+r_2k_3    documentation   - Document changes to prompts with clear rationale for adjustments
+r_2k_4    versioning      - Indicate version changes when modifying previously executed prompts
+
+r_2l__ version            - Version control
+r_2l_1    reason          - Document reason for modification to maintain implementation history
+r_2l_2    tracking        - Enable tracking of evolution of prompts throughout development
+r_2l_3    clarity         - Provide clear versioning to avoid confusion about current state
+r_2l_4    reference       - Include references to previous versions for complete documentation
 
 //////////////////////////////////////////////////////////////////////////////// 

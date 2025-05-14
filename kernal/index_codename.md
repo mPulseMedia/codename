@@ -21,21 +21,25 @@ lookup                - Code snippet retrieval and display
 
 marker                - Indicator showing current execution position within prompt files
 
+outline               - Summary file containing group entries from related files
+
 prompt                - Written prompts that were or will be entered to an AI copilot
 prompt_00_outline     - Unique file within the kernal that lists past and future prompt_group_name
-prompt_01_start       - Starting workflow tasks file
-prompt_02_tbd         - TBD workflow tasks file
+prompt_01_start       - Starting workflow tasks
+prompt_02_tbd         - TBD workflow tasks
 prompt_file           - Physical markdown file containing prompts
 prompt_group          - Collection of related prompts within a prompt_file
 prompt_group_name     - Name for a group of related prompts within a prompt_file
 prompt_name           - Identifier for the prompt 
 prompt_summary        - Short description of what the prompt does and appears as the first line in the prompt
 
+req_00_outline        - Summary file listing all requirement files and their purposes
 req_01_app            - TBD app requirements file
 req_02_codename       - TBD app codenames file
 
 root                  - First term of a codename operations
 rule                  - Established guidelines and constraints for project workflow
+rule_00_outline       - Summary file listing all rule files and their purposes
 rule_01_codename      - File containing codename conventions and rules
 rule_02_prompt        - File containing prompt strict processing guidelines and rules
 rule_03_format        - File containing formatting standards and rules
@@ -43,12 +47,13 @@ rule_file             - Physical markdown file containing rules
 rule_group            - Collection of related rules within a rule_file
 rule_group_name       - Name for a group of related rules within a rule_file
 rule_name             - Identifier for the rule
+rule_outline          - Rule for outline file formatting and usage (see r_3x__)
 
 separator             - Visual divider between sections in files
 search                - Search-related functionality and interfaces
 
 task                  - Detailed implementation instruction within a prompt
-task_name             - Identifier for a task
+task_name             - Name for a task
 
 term                  - Single word used within a codename, and used to refer to a consistent concept across codenames
 
