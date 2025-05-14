@@ -1,9 +1,10 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-index_codename index
+codename_index
 
 codename              - Specific "term of art" used by a set of project files
 codename_description  - The short descriptive text that follows the codename in the index
+codename_index        - A presentation of an assembled list of the codenames referenced within a set of project files
 
 file                  - Digital document containing structured content
 file_name             - The name given to a file, that may be referred to without the extension
@@ -13,7 +14,6 @@ filter                - Filtering functionality and controls
 group_separator       - Visual divider between groups in files
 
 index                 - Codename index functionality and navigation
-index_codename        - A presentation of an assembled list of the codenames referenced within a set of project files
 
 kernal                - Core files from which the codename methodology occurs
 kernal_dir            - Organized directory structure for codename methodology files
@@ -45,7 +45,6 @@ rule_00_outline       - Summary file listing all rule files and their purposes
 rule_01_codename      - File containing codename conventions and rules
 rule_02_prompt        - File containing prompt strict processing guidelines and rules
 rule_03_format        - File containing formatting standards and rules
-rule_04_structure     - File containing directory structure and organization rules
 rule_file             - Physical text file containing rules
 rule_group            - Collection of related rules within a rule_file
 rule_group_name       - Name for a group of related rules within a rule_file

@@ -99,7 +99,7 @@ r_3x_3    identification - Include group summaries from all files of the same ty
 r_3x_4    structure      - First list file names followed by section group summaries
 r_3x_5    grouping       - Group summaries under their respective files with blank lines
 r_3x_6    completeness   - Include all section group IDs and descriptions for each file
-r_3x_7    index          - Always include reference to index_codename as the last entry
+r_3x_7    index          - Always include reference to codename_index as the last entry
 r_3x_8    maintenance    - Update outline files when adding or modifying section groups
 r_3x_9    alignment      - Follow dash alignment rules consistent with other files
 
@@ -120,5 +120,25 @@ r_3w_1    bullets        - Use bullet points for multiple changes to enhance rea
 r_3w_2    minimal        - Minimize explanatory text to focus on actual changes made
 r_3w_3    focus          - Focus on what changed rather than explaining rationale
 r_3w_4    actionable     - Ensure updates provide actionable information for next steps
+
+r_3y__ dir               - Directory structure organization
+r_3y_1    root           - Keep kernal as the root directory for all methodology files
+r_3y_2    organization   - Organize files into subdirectories by type (prompt, req, rule)
+r_3y_3    prompt         - Store all prompt files in the prompt/ subdirectory
+r_3y_4    req            - Store all requirement files in the req/ subdirectory
+r_3y_5    rule           - Store all rule files in the rule/ subdirectory
+r_3y_6    shared         - Keep codename_index.txt and kernal_dir_list.txt in the root directory
+r_3y_7    consistency    - Maintain consistent naming conventions across all directories
+
+r_3z__ kernal_dir        - Kernal directory organization
+r_3z_1    purpose        - Organize files by type to improve project navigation and maintainability
+r_3z_2    structure      - Follow a consistent three-directory structure (prompt, req, rule)
+r_3z_3    reference      - Use kernal_dir_list.txt to document the directory structure
+r_3z_4    flexibility    - Allow for future expansion with additional subdirectories as needed
+r_3z_5    access         - Ensure all files remain accessible through consistent directory paths
+r_3z_6    path           - Use relative paths when referencing files within the kernal directory
+r_3z_7    forward        - Use forward slashes for path separators (e.g., prompt/prompt_01_start.txt)
+r_3z_8    explicit       - Include the full path from the kernal directory when referencing files
+r_3z_9    subdirectory   - Always include the appropriate subdirectory when referencing files
 
 //////////////////////////////////////////////////////////////////////////////// 

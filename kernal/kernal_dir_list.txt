@@ -7,6 +7,6 @@ kernal/prompt         - Subdirectory containing all prompt files
 kernal/req            - Subdirectory containing all requirement files
 kernal/rule           - Subdirectory containing all rule files
 kernal_dir_list       - This file documenting the kernal directory structure
-index_codename        - Index file listing all codenames used in the project
+codename_index        - Index file listing all codenames used in the project
 
 //////////////////////////////////////////////////////////////////////////////// 

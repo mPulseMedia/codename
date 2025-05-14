@@ -48,13 +48,9 @@ r_3x__ outline           - Outline file format and usage
 r_3u__ communicate       - Communication guidelines
 r_3v__ reference         - Code references
 r_3w__ updates           - Concise updates
+r_3y__ dir               - Directory structure organization
+r_3z__ kernal_dir        - Kernal directory organization
 
-rule_04_structure      - Directory structure and organization
-
-r_4a__ dir              - Directory structure rules
-r_4b__ kernal_dir       - Kernal directory organization
-r_4c__ path             - File path references
-
-index_codename         - Index of all codenames used in kernal files
+codename_index         - Index of all codenames used in kernal files
 
 //////////////////////////////////////////////////////////////////////////////// 
