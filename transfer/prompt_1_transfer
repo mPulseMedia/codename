@@ -1,0 +1,29 @@
+--------------------------------------------------------------------------------
+
+prompt_1_transfer      - File transfer instructions
+
+1a_ folder_create      - Create kernal folder
+   a v2_folder         - Create a folder named `kernal` at the top level of the working directory
+   b structure         - Ensure folder exists with appropriate permissions for file operations
+
+1b_ rule_copy          - Copy rule files
+   a rule_files        - Copy all rule_*.md files from source to kernal directory
+   b req_files         - Copy all req_*.md files from source to kernal directory
+
+1c_ prompt_start       - Copy start prompt
+   a copy_file         - Copy prompt_1_start.md from curor_control to kernal directory
+   b modify_name       - Replace all instances of "codename" with "transfer" in the copied file
+
+1d_ prompt_create      - Create prompt file
+   a prompt_2_tbd      - Create a new file named `prompt_2_tbd` in the kernal directory
+   b file_setup        - Make the file empty
+
+1e_ outline_copy       - Copy outline content
+   a create_file       - Create a new file called prompt_outline in kernal
+   b line1             - Write the first line as "1_start                 - Define core workflow rules for project execution"
+   c blank             - Put a blank line in there
+   c line2             - After a blank line, add "1_tbd                   - tbd"
+
+<< YOU ARE HERE >>
+
+-------------------------------------------------------------------------------- 
