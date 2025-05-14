@@ -1,7 +1,7 @@
 rule_2a_word                - Word selection rules
 
 2a_ word_choice          - Choose words carefully
-   a everything          - IMPORTANT: apply codename convention to every single identifyer that 
+   a everything          - IMPORTANT: apply codename convention to every single identifier that 
                            you generate: variables, functions, CSS classnames, 
                            constants, parameters, file names, event names, properties, 
                            element IDs; . Don't leave anything out that you can name!
@@ -67,7 +67,7 @@ rule_2b_structure           - Structure codenames well
    c reference           - New roots can be referenced independently
    d example             - filter_search_button_clear → clear_filter_button
 
-2b5_ project_root        - Root project prefixes
+2b5_ app_root            - Fundamental app root terms
    a index               - codename index functionality and navigation
    b codename            - specific "term of art" for functions and variables
    c term                - term components within a codename structure
@@ -76,8 +76,9 @@ rule_2b_structure           - Structure codenames well
    f filter              - filtering functionality and controls
    g lookup              - code snippet retrieval and display
    h reveal              - HTML & CSS codename reveal functions
-   i prompt_name         - identifier for prompt sections in documentation
+   i prompt              - identifier for prompts in documentation
    j rule_name           - identifier for rule sections in documentation
+   k kernal              - methodology structure and processing rules
 
 --------------------------------------------------------------------------------
 

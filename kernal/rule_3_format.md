@@ -2,33 +2,26 @@ rule_3b_convention
 
 3b_ convention           - Prompt convention usage
 
-   a intro_format        - Start each prompt file with a brief sentence explaining purpose
-   b exec_flow           - Execute prompts sequentially, documenting implementation notes
+   a intro_format        - Start each prompt group with a brief summary explaining purpose
+   b summary_format      - Use consistent format for all prompt summaries
    c name_rule           - Use consistent identifiers (e.g., prompt_1b_struct) as references
-   d desc_style          - Write instructions in present tense imperative form for clarity
+   d desc_style          - Write tasks in present tense imperative form for clarity
    e prompt_reuse        - Allow revisiting and modifying prompts as needed during development
 
 3b1_ intro_format        - Format introductions
-   a overview            - Include overview of sections with clear organizational structure
-   b purpose             - State clear purpose statement at the beginning of each file 
-   c concise             - Keep introduction brief while providing necessary context
+   a overview            - Include overview of prompts with clear organizational structure
+   b purpose             - State clear purpose summary at the beginning of each prompt group 
+   c concise             - Keep summary brief while providing necessary context
    d scannable           - Format for easy scanning with consistent visual hierarchy
-
-3b2_ exec_flow           - Flow of execution
-   a sequence            - Follow established order when executing prompt sections
-   b document            - Record implementation notes and modifications after execution
-   c iterate             - Revisit and refine implementations as needed during development
-   d track               - Maintain history of executed prompts for project documentation
-   e backtrack           - Document any need to revisit previous steps in the sequence
 
 3b3_ name_rule           - Rule for naming
    a reference           - Create identifiers that serve as both plan references and history
    b hierarchy           - Follow established numbering convention for hierarchical structure
-   a consistency         - Maintain naming consistency across all project documentation
-   b snake_case          - Use snake_case for all identifiers with meaningful component parts
+   c consistency         - Maintain naming consistency across all project documentation
+   d snake_case          - Use snake_case for all identifiers with meaningful component parts
 
-3b4_ desc_style          - Style descriptions
-   a omit_you            - Omit "You" when AI assistant is implied subject in instructions
+3b4_ summary_style       - Style summaries
+   a omit_you            - Omit "You" when AI assistant is implied subject in summaries
    b action_verbs        - Use action verbs (create, implement, design) for clear direction
    c we_review           - Use "we" for collaborative review steps to indicate partnership
    d specificity         - Be specific about expected outcomes for each instruction point
@@ -40,9 +33,9 @@ rule_3b_convention
    d versioning          - Indicate version changes when modifying previously executed prompts
 
 3b6_ impl                - Implementation focus
-   a focus               - Submit only the relevant section rather than the entire file
+   a focus               - Submit only the relevant prompt rather than the entire prompt group
    b isolation           - Keep implementation focused on current task without scope creep
-   c completion          - Complete one prompt section before moving to the next for clarity
+   c completion          - Complete one prompt before moving to the next for clarity
    d verification        - Verify implementation meets requirements before proceeding further
 
 3b7_ docs                - Documentation notes
@@ -75,14 +68,12 @@ rule_3c_format
    c structure           - Follow structured approach to organization of prompt content
    d alignment           - Use proper alignment for enhanced visual scanning and navigation
 
-3c1_ format_parts        - Parts of format
+3c1_ format_parts        - Format structure
    a separator           - Horizontal line of equals signs (====) for major section breaks
-   b prompt_section      - Area between separator lines containing related instructions
-   c prompt_name         - Identifier with format: prompt_name: prompt_#_name for reference
-   d outline_num         - Hierarchical identifier (e.g., 1a2) following numbering convention
-   e keyword             - Short word after outline number (e.g., "env") for quick reference
-   f desc                - Text to right of dash after keyword containing actual instructions
-   g sub_items           - Indented points under main description with relevant details
+   b prompt_structure    - Follow prompt terminology defined in rule_1_prompt.md (1a1_prompt_codenames)
+   c spacing             - Maintain consistent spacing between structural elements
+   d alignment           - Align related elements (task_name, summary, etc.) for clarity
+   e visual_hierarchy    - Create clear visual distinction between different prompt levels
 
 3c2_ numbering           - Format numbers
    a consistency         - Maintain consistent numbering scheme throughout documentation
@@ -120,7 +111,7 @@ rule_3c_format
    e readability         - Prioritize readability over strict adherence to character count
 
 3c7_ separator           - Separate sections
-   a section_boundaries  - Place before and after each prompt section for clear separation
+   a section_boundaries  - Place before and after each prompt for clear separation
    b visual_boundaries   - Create clear visual boundaries between major content sections
    c exact_width         - Ensure separators are exactly 80 characters wide for consistency
    d complete_separation - Include separator at beginning and end of document for completeness
@@ -137,15 +128,15 @@ rule_3c_format
    c numbering_sequence  - Use numbers to indicate sequence and organization of files
    d consistent_format   - Maintain consistent file naming format across project documentation
 
-3c10_ desc_length        - Length of descriptions
-   a one_line_ideal      - Ideally fit descriptions on one line while providing necessary detail
-   b complex_breakdown   - Break complex concepts into multiple steps for clarity and focus
+3c10_ summary_length     - Length of summaries
+   a one_line_ideal      - Ideally fit summaries on one line while providing necessary detail
+   b complex_breakdown   - Break complex concepts into multiple tasks for clarity and focus
    c sub_bullet_detail   - Use sub-bullet points for detail when additional explanation needed
-   d scannable_clarity   - Ensure all descriptions are clear, scannable, and actionable
-   e prompt_brevity      - Keep top-level section descriptions extremely short (3-4 words maximum)
-   f keyword_match       - Use keywords from the line's codename in the short description
+   d scannable_clarity   - Ensure all summaries are clear, scannable, and actionable
+   e prompt_brevity      - Keep prompt summaries extremely short (3-4 words maximum)
+   f task_name_match     - Use task_name words in the summary for clarity and consistency
    g codename_rules      - All codenames must follow the conventions in rule_2_codename.md
-   h sub_detail          - Use more detailed descriptions for sub-level items to provide context
+   h sub_detail          - Use more detailed descriptions for task items to provide context
 
 3c11_ align_symbol       - Symbol alignment
    a colon_alignment     - Align colons and other symbols in lists for visual consistency
@@ -153,15 +144,15 @@ rule_3c_format
    c code_examples       - Align assignment operators and other symbols in code examples
    d section_consistency - Maintain consistent alignment within related documentation sections
 
-3c12_ prompt_name        - Name prompt sections
-   a format_standard     - Format: prompt_name: prompt_#x_name for clear identification
-   b section_header      - Use same identifier as the section header for consistency
-   c reference_tracking  - Enable tracking and history of prompt execution through naming
-   d execution_history   - Support documentation of execution history through consistent naming
+3c12_ prompt_naming      - Name prompt files and identifiers
+   a standard_format     - Use standardized naming format as defined in rule_1_prompt.md
+   b consistency         - Maintain consistent naming patterns across all prompt files
+   c reference_tracking  - Enable tracking of prompt execution through systematic naming
+   d versioning          - Include versioning when modifying existing prompt content
 
-3c13_ desc_case          - Case descriptions
-   a capital_first       - Start all descriptions with a capital letter for readability
-   b sentence_style      - Write descriptions in sentence-style capitalization
+3c13_ summary_case       - Case summaries
+   a capital_first       - Start all summaries with a capital letter for readability
+   b sentence_style      - Write summaries in sentence-style capitalization
    c consistency         - Maintain consistent capitalization across all documentation
    d examples            - "Create file structure" not "create file structure"
                            "Define variables" not "define variables"
