@@ -16,6 +16,8 @@ index                 - Codename index functionality and navigation
 index_codename        - A presentation of an assembled list of the codenames referenced within a set of project files
 
 kernal                - Core files from which the codename methodology occurs
+kernal_dir            - Organized directory structure for codename methodology files
+kernal_dir_list       - File documenting the kernal directory structure
 
 lookup                - Code snippet retrieval and display
 
@@ -27,7 +29,7 @@ prompt                - Written prompts that were or will be entered to an AI co
 prompt_00_outline     - Unique file within the kernal that lists past and future prompt_group_name
 prompt_01_start       - Starting workflow tasks
 prompt_02_tbd         - TBD workflow tasks
-prompt_file           - Physical markdown file containing prompts
+prompt_file           - Physical text file containing prompts
 prompt_group          - Collection of related prompts within a prompt_file
 prompt_group_name     - Name for a group of related prompts within a prompt_file
 prompt_name           - Identifier for the prompt 
@@ -43,7 +45,8 @@ rule_00_outline       - Summary file listing all rule files and their purposes
 rule_01_codename      - File containing codename conventions and rules
 rule_02_prompt        - File containing prompt strict processing guidelines and rules
 rule_03_format        - File containing formatting standards and rules
-rule_file             - Physical markdown file containing rules
+rule_04_structure     - File containing directory structure and organization rules
+rule_file             - Physical text file containing rules
 rule_group            - Collection of related rules within a rule_file
 rule_group_name       - Name for a group of related rules within a rule_file
 rule_name             - Identifier for the rule

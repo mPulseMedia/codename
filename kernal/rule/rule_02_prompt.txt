@@ -3,7 +3,7 @@
 rule_02_prompt
 
 r_2a__ terms            - Standard prompt terminology
-r_2a_1    file          - Physical markdown file containing prompts
+r_2a_1    file          - Physical text file containing prompts
 r_2a_2    group         - Collection of related prompts within a prompt_file
 r_2a_3    prompt        - Written prompts that were or will be entered to an AI copilot
 r_2a_4    summary       - Short description of what the prompt does and appears as the first line in the prompt
@@ -15,7 +15,7 @@ r_2a_9    separator     - Visual divider between sections in files
 r_2a10    file          - Digital document containing structured content
 r_2a11    alignment     - Visual arrangement for readability and structure
 r_2a12    id            - Alphanumeric id pattern used in documentation (r_1a__, p_2b_3)
-r_2a13    filenum       - Two-digit number in filename (e.g., 02 in rule_02_prompt.md)
+r_2a13    filenum       - Two-digit number in filename (e.g., 02 in rule_02_prompt.txt)
 r_2a14    file_kernal   - Collection of core files that implement the codename methodology
 
 r_2b__ process          - Process for prompts
@@ -29,7 +29,7 @@ r_2b_7    limits        - Don't create features, files, or functionality not dir
 
 r_2c__ marker           - Marker usage and movement
 r_2c_1    initial       - At project start, the /// YOU ARE HERE /// marker appears at the TOP of 
-                          both the prompt_00_outline.md file and the prompt_01_start.md file, before 
+                          both the prompt_00_outline.txt file and the prompt_01_start.txt file, before 
                           any prompt content
 r_2c_2    update        - IMPORTANT: After processing a prompt, move the /// YOU ARE HERE /// marker 
                           to the BOTTOM of the prompt that was just processed as the final step
