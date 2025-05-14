@@ -2,7 +2,7 @@
 
 /// YOU ARE HERE ///
 
-prompt_1_start         - Starting prompt workflow
+prompt_1_start prompt_group
 
 1a_ prompt_flow        - Flow of prompt processing
    1 do_command        - When I say "do prompt (group|file) xxx", then grab that prompt (prompt_group) and do it
@@ -11,7 +11,7 @@ prompt_1_start         - Starting prompt workflow
                           of the tasks lower in the file
 
 1b_ prompt_this        - This prompt specifics
-   1 read              - The main thing is to read in the prompt or group and really study the rule and 
+   1 read              - The main thing is to read in the prompt_file and really study the rule and 
                           requirement documents
 
 1c_ methodology        - Methodology principles

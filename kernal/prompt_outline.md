@@ -1,9 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-/// YOU ARE HERE ///
+prompt_outline prompt_group
 
 prompt_1_start          - Starting workflow tasks
 
 prompt_2_tbd            - TBD workflow tasks 
+
+index_codename          - Index of all codenames used in kernal files
+
+/// YOU ARE HERE ///
 
 //////////////////////////////////////////////////////////////////////////////// 

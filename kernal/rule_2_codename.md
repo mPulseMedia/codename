@@ -81,6 +81,14 @@ rule_2b_structure           - Structure codenames well
    i prompt              - identifier for prompts in documentation
    j rule_name           - identifier for rule sections in documentation
    k kernal              - methodology structure and processing rules
+   l marker              - indicator showing current execution position
+   m rule                - established guidelines and constraints for project workflow
+   n summary             - brief description of functionality for reference
+   o task                - detailed implementation instruction within a prompt
+   p task_name           - identifier word for type of task being performed
+   q separator           - visual divider between document sections
+   r file                - digital document containing structured content
+   s alignment           - visual arrangement for readability and structure
 
 ////////////////////////////////////////////////////////////////////////////////
 
