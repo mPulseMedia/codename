@@ -1,3 +1,5 @@
+////////////////////////////////////////////////////////////////////////////////
+
 rule_3b_convention
 
 3b_ convention           - Prompt convention usage
@@ -57,7 +59,7 @@ rule_3b_convention
    c progress_tracking   - Maintain clear visual indication of project execution progress
    d next_task           - Clearly identify next task to be executed in the sequence
 
---------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
 
 rule_3c_format
 
@@ -157,7 +159,7 @@ rule_3c_format
    d examples            - "Create file structure" not "create file structure"
                            "Define variables" not "define variables"
 
---------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
 
 rule_3d_comm
 
@@ -180,4 +182,4 @@ rule_3d_comm
    c change_focus        - Focus on what changed rather than explaining rationale
    d actionable_updates  - Ensure updates provide actionable information for next steps
 
--------------------------------------------------------------------------------- 
+//////////////////////////////////////////////////////////////////////////////// 

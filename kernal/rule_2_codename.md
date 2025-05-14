@@ -1,3 +1,5 @@
+////////////////////////////////////////////////////////////////////////////////
+
 rule_2a_word                - Word selection rules
 
 2a_ word_choice          - Choose words carefully
@@ -37,7 +39,7 @@ rule_2a_word                - Word selection rules
    d examples            - data_save (not data_persistence)
                            user_add (not user_registration)
 
---------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
 
 rule_2b_structure           - Structure codenames well
 
@@ -80,7 +82,7 @@ rule_2b_structure           - Structure codenames well
    j rule_name           - identifier for rule sections in documentation
    k kernal              - methodology structure and processing rules
 
---------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
 
 rule_2c_format             - Format codenames consistently
 
@@ -115,4 +117,4 @@ rule_2c_format             - Format codenames consistently
    d wrap_indent         - indent wrapped lines to align with text (19 spaces)
    e sub_indent          - indent sublists consistently (add 1 level/19 spaces)
 
--------------------------------------------------------------------------------- 
+//////////////////////////////////////////////////////////////////////////////// 

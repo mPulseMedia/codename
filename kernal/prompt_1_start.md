@@ -1,6 +1,6 @@
---------------------------------------------------------------------------------
+////////////////////////////////////////////////////////////////////////////////
 
-<< YOU ARE HERE >>
+/// YOU ARE HERE ///
 
 prompt_1_start         - Starting prompt workflow
 
@@ -33,4 +33,4 @@ prompt_1_start         - Starting prompt workflow
    a incremental_dev   - Develop incrementally through defined prompt sequence
    b quality_focus     - Ensure high-quality implementation meeting all requirements
 
--------------------------------------------------------------------------------- 
+//////////////////////////////////////////////////////////////////////////////// 

@@ -1,3 +1,5 @@
+////////////////////////////////////////////////////////////////////////////////
+
 rule_1_prompt              - Prompt rules processing
 
 1a1_ prompt_codenames   - Standard prompt terminology
@@ -56,6 +58,6 @@ rule_1_prompt              - Prompt rules processing
    a top_level          - Only include the summaries of each prompt in prompt groups
    b past               - Make sure the summaries in each place match
    c future             - Populate future prompt summaries
-   d marker_include     - Also include << YOU ARE HERE >> marker in outline prompt files
+   d marker_include     - Also include /// YOU ARE HERE /// marker in outline prompt files
 
--------------------------------------------------------------------------------- 
+//////////////////////////////////////////////////////////////////////////////// 
