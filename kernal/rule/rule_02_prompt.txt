@@ -41,6 +41,8 @@ r_2c_5    progress      - Progress to next file when current file is fully proce
 r_2c_6    indicator     - Use the marker as a visual indicator of execution progress
 r_2c_7    next          - Clearly identify the next prompt based on marker position
 r_2c_8    syntax        - Use triple-slash format: /// YOU ARE HERE ///
+r_2c_9    removal       - Remove marker from previous file when moving to next file
+r_2c10    transition    - Markers should only exist in the current active file and outline file
 
 r_2d__ implement        - Implementing prompts efficiently
 r_2d_1    isolation     - Execute only the relevant prompt rather than entire prompt_group or files
@@ -102,5 +104,11 @@ r_2l_1    reason          - Document reason for modification to maintain impleme
 r_2l_2    tracking        - Enable tracking of evolution of prompts throughout development
 r_2l_3    clarity         - Provide clear versioning to avoid confusion about current state
 r_2l_4    reference       - Include references to previous versions for complete documentation
+
+r_2n__ reset              - Reset command handling
+r_2n_1    command         - When "reset" is typed in chat, reset marker positions
+r_2n_2    placement       - Place marker at the top of the appropriate file based on outline
+r_2n_3    outline         - Ensure outline file marker is synchronized with active file
+r_2n_4    verification    - Verify correct placement before proceeding with next commands
 
 //////////////////////////////////////////////////////////////////////////////// 
