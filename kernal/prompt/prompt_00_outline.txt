@@ -6,7 +6,7 @@ prompt_00_outline
 
 prompt_01_start        - Starting workflow tasks
 
-prompt_02_tbd          - TBD workflow tasks 
+prompt_02_app          - Application implementation tasks
 
 codename_index         - Index of all codenames used in kernal files
 

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-prompt_00_-YOU_ARE_HERE
+prompt_01_-YOU_ARE_HERE
 
 This file serves as a dynamic marker indicator that shows which prompt file 
 currently contains the /// YOU ARE HERE /// marker.
@@ -14,6 +14,6 @@ corresponding prompt file in directory listings.
 Current active prompt: prompt_01_start.txt (current)
 Previous prompt: None (reset position)
 
-When "reset" is executed, this file will reset to prompt_00_-YOU_ARE_HERE.txt
+When "reset marker" is executed, this file will reset to prompt_00_-YOU_ARE_HERE.txt
 
 //////////////////////////////////////////////////////////////////////////////// 

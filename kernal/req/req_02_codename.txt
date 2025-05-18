@@ -3,6 +3,10 @@
 req_02_codename
 
 q_2a__ name_list       - Codename convention requirements
-q_2a_1    future       - TBD app codename_list for future implementation
+q_2a_1    app          - Required codenames for application implementation:
+                          window - Main application window
+                          page - Content container for the application
+                          block - Text content element
+                          format - Formatting utilities for content display
 
 ////////////////////////////////////////////////////////////////////////////////

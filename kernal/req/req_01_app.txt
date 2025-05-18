@@ -3,6 +3,7 @@
 req_01_app
 
 q_1a__ app             - Application requirements
+q_1a_1    minimal      - Employ the most minimal archithchure and fewest technologies for the app
 q_1a_1    hello_world  - Create a webpage with "hello world that appears in the center
 
 ////////////////////////////////////////////////////////////////////////////////

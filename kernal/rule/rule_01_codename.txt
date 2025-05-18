@@ -108,4 +108,11 @@ r_1k_2    css             - In css files, no blank spaces between class definiti
 r_1k_3    readability     - Balance compactness with readability
 r_1k_4    sections        - Use comments to delineate logical sections
 
+r_1l__ verify            - Verification requirements
+r_1l_1    review         - Review and ensure all code follows established codename conventions
+r_1l_2    check          - Verify that all identifiers adhere to the snake_case format
+r_1l_3    boolean        - Confirm boolean variables end with _is suffix
+r_1l_4    list           - Ensure all lists use singular+_list naming pattern
+r_1l_5    update         - Update codename_index with any new terms introduced
+
 //////////////////////////////////////////////////////////////////////////////// 

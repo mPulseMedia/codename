@@ -26,6 +26,9 @@ r_2b_4    retrieval     - Retrieve and process the next prompt or prompt_group f
 r_2b_5    control       - Only execute one prompt or prompt_group at a time for controlled progress
 r_2b_6    scope         - Maintain clear boundaries around the current execution scope
 r_2b_7    limits        - Don't create features, files, or functionality not directly requested
+r_2b_8    update        - "update prompts" command: review requirement files and update prompt
+                          files to incorporate all appropriate requirements; only update prompts
+                          below or after the marker position, never those already processed
 
 r_2c__ marker           - Marker format and position
 r_2c_1    format        - Use triple-slash format: /// YOU ARE HERE ///
@@ -63,6 +66,8 @@ r_2g_2    past          - Make sure the summaries in each place match
 r_2g_3    future        - Populate future prompt summaries
 r_2g_4    marker        - Include marker in outline file, synchronized with active prompt file
 r_2g_5    reference     - Follow general outline file rules defined in rule_03_format r_3x__
+r_2g_6    scope         - Include only prompt_group_names for future prompts in outline file; 
+                          don't create separate files for future prompt groups
 
 r_2h__ convention        - Prompt convention usage
 r_2h_1    everything     - Start each prompt_group with a brief summary explaining purpose
@@ -70,6 +75,8 @@ r_2h_2    summary        - Use consistent format for all prompt_summaries
 r_2h_3    name           - Use consistent identifiers (e.g., prompt_struct) as references
 r_2h_4    style          - Write tasks in present tense imperative form for clarity
 r_2h_5    reuse          - Allow revisiting and modifying prompts as needed during development
+r_2h_6    sync           - When creating or modifying prompt content, keep the filename in sync
+                           with the prompt title and update all references in outline file
 
 r_2i__ intro             - Format introductions
 r_2i_1    overview       - Include overview of prompts with clear organizational structure
@@ -103,16 +110,38 @@ r_2m_4    bottom        - Place marker at BOTTOM of processed prompt/group
 r_2m_5    progress      - Move marker to next file when current file is fully processed
 r_2m_6    sync          - Keep markers synchronized between prompt file and outline file
 r_2m_7    remove        - Remove marker from previous file when moving to next file
+r_2m_8    verify        - Double-check marker positions after completion to ensure:
+                           1) markers appear only in active prompt file and outline file
+                           2) marker_file name matches active prompt file
+                           3) marker positions in active file and outline file are consistent
 
 r_2n__ reset            - Reset command handling
-r_2n_1    command       - "reset" command: restore markers to initial positions
+r_2n_1    command       - "reset marker" command: restore markers to initial positions
 r_2n_2    placement     - Put marker at TOP of prompt_01_start.txt and before it in outline
 r_2n_3    cleanup       - Remove markers from all other prompt files
+r_2n_4    verify        - Double-check after reset that markers are correctly positioned and
+                           no duplicate markers exist in any files
+r_2n_5    prompts       - "reset prompts" command: delete all prompt files except prompt_01_start.txt;
+                           restore outline file to only reference prompt_01_start.txt
+r_2n_6    codenames     - "reset codenames" command: clear codenames in req_02_codename.txt;
+                           restore file to initial state for starting implementation from scratch
 
 r_2o__ marker_file      - External marker file tracking
 r_2o_1    naming        - File format: prompt_xx_-YOU_ARE_HERE.txt (xx = active prompt number)
 r_2o_2    hyphen        - Hyphen ensures file sorts before corresponding prompt file
 r_2o_3    sync          - Update when marker moves between prompt files
-r_2o_4    reset         - Reset to prompt_00_-YOU_ARE_HERE.txt on reset command
+r_2o_4    reset         - Reset to prompt_00_-YOU_ARE_HERE.txt on "reset marker" command
+r_2o_5    verify        - Ensure only one marker file exists and its name correctly
+                           corresponds to the current active prompt file
+
+r_2p__ requirements     - Requirements management
+r_2p_1    scope         - When updating prompts files from requirements, only populate tasks for current 
+                          prompt_group and next prompt_group
+r_2p_2    future        - For future prompt_groups beyond next, only include prompt_group_name
+                          without populating detailed tasks
+r_2p_3    preserve      - Never modify prompts above/before marker position; these are considered
+                          already processed
+r_2p_4    update        - Only update prompts at or below current marker position and in
+                          subsequent prompt files
 
 //////////////////////////////////////////////////////////////////////////////// 
