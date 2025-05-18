@@ -19,9 +19,7 @@ r_2a13    filenum       - Two-digit number in filename (e.g., 02 in rule_02_prom
 r_2a14    file_kernal   - Collection of core files that implement the codename methodology
 
 r_2b__ process          - Process for prompts
-r_2b_1    command       - When "do" is typed in chat, locate the /// YOU ARE HERE /// marker;
-                          if followed by a specific prompt group (e.g., "do p_1a"), process only
-                          that group and move the marker afterwards as the last action
+r_2b_1    command       - "do" executes prompt at marker position; specific group formats: "do p_1a"
 r_2b_2    sync          - If markers are out of sync then first ask what to do -- because it isn't clear which one to choose
 r_2b_3    tracking      - Find the marker in prompt_files to determine next actions
 r_2b_4    retrieval     - Retrieve and process the next prompt or prompt_group for execution
@@ -29,38 +27,23 @@ r_2b_5    control       - Only execute one prompt or prompt_group at a time for 
 r_2b_6    scope         - Maintain clear boundaries around the current execution scope
 r_2b_7    limits        - Don't create features, files, or functionality not directly requested
 
-r_2c__ marker           - Marker usage and movement
-r_2c_1    initial       - At project start, the /// YOU ARE HERE /// marker appears at the TOP of 
-                          both the prompt_00_outline.txt file and the prompt_01_start.txt file, before 
-                          any prompt content
-r_2c_2    update        - IMPORTANT: After processing a prompt, move the /// YOU ARE HERE /// marker 
-                          to the BOTTOM of the prompt that was just processed as the final step
-                          Never place the marker before or in the middle of a prompt
-r_2c_3    sync          - Always update the marker in both the active prompt_file AND in the 
-                          prompt_00_outline file to ensure they remain synchronized
-r_2c_4    unique        - The marker should only appear in a prompt_file and a prompt_00_outline file, and nowhere else
-r_2c_5    progress      - Progress to next file when current file is fully processed
-r_2c_6    indicator     - Use the marker as a visual indicator of execution progress
-r_2c_7    next          - Clearly identify the next prompt based on marker position
-r_2c_8    syntax        - Use triple-slash format: /// YOU ARE HERE ///
-r_2c_9    removal       - Remove marker from previous file when moving to next file
-r_2c10    transition    - Markers should only exist in the current active file and outline file
-r_2c11    group_process - When processing a specific prompt group (e.g., "do p_1a"), move the marker 
-                          to the end of that group as the final step after processing is complete,
-                          and update the outline file to match progress
+r_2c__ marker           - Marker format and position
+r_2c_1    format        - Use triple-slash format: /// YOU ARE HERE ///
+r_2c_2    initial       - Place marker at TOP of prompt_01_start.txt and prompt_00_outline.txt on project start
+r_2c_3    position      - Place marker only at the TOP or BOTTOM of files, never in the middle
+r_2c_4    single        - Only one marker exists in the active prompt file and outline file
+r_2c_5    move_next     - After completing a file, move marker to TOP of next file in sequence
 
 r_2d__ implement        - Implementing prompts efficiently
 r_2d_1    isolation     - Execute only the relevant prompt rather than entire prompt_group or files
 r_2d_2    focus         - Keep implementation focused on current task without scope creep
-r_2d_3    completion    - Complete one prompt before moving to the next, always moving the marker
-                          as the final step of completion
+r_2d_3    complete      - Finish one prompt/group before moving to the next
 r_2d_4    verify        - Verify implementation meets requirements before proceeding
 r_2d_5    explicit      - Only implement what is explicitly requested, nothing more
 r_2d_6    minimal       - Use the simplest implementation that satisfies requirements
 
 r_2e__ document         - Documenting process
-r_2e_1    notes         - Add implementation notes directly after executing a prompt, confirming
-                          marker movement as part of implementation completion
+r_2e_1    notes         - Add implementation notes directly after executing a prompt
 r_2e_2    outcomes      - Document specific outcomes, changes, and decisions made
 r_2e_3    challenges    - Note any challenges encountered and their resolutions
 r_2e_4    next          - Include recommendations for next steps after completion
@@ -78,7 +61,7 @@ r_2g__ outline          - Outline prompt format
 r_2g_1    toplevel      - Only include the summaries of each prompt in prompt_groups
 r_2g_2    past          - Make sure the summaries in each place match
 r_2g_3    future        - Populate future prompt summaries
-r_2g_4    marker        - Also include /// YOU ARE HERE /// marker in outline prompt_file
+r_2g_4    marker        - Include marker in outline file, synchronized with active prompt file
 r_2g_5    reference     - Follow general outline file rules defined in rule_03_format r_3x__
 
 r_2h__ convention        - Prompt convention usage
@@ -112,10 +95,24 @@ r_2l_2    tracking        - Enable tracking of evolution of prompts throughout d
 r_2l_3    clarity         - Provide clear versioning to avoid confusion about current state
 r_2l_4    reference       - Include references to previous versions for complete documentation
 
-r_2n__ reset              - Reset command handling
-r_2n_1    command         - When "reset" is typed in chat, reset marker positions
-r_2n_2    placement       - Place marker at the top of the appropriate file based on outline
-r_2n_3    outline         - Ensure outline file marker is synchronized with active file
-r_2n_4    verification    - Verify correct placement before proceeding with next commands
+r_2m__ movement         - Marker movement rules
+r_2m_1    do_command    - "do" without parameters: process from marker position, then move marker
+r_2m_2    do_group      - "do [group]": process only that group, then move marker after it
+r_2m_3    completion    - Move marker as final step after completing any prompt processing
+r_2m_4    bottom        - Place marker at BOTTOM of processed prompt/group
+r_2m_5    progress      - Move marker to next file when current file is fully processed
+r_2m_6    sync          - Keep markers synchronized between prompt file and outline file
+r_2m_7    remove        - Remove marker from previous file when moving to next file
+
+r_2n__ reset            - Reset command handling
+r_2n_1    command       - "reset" command: restore markers to initial positions
+r_2n_2    placement     - Put marker at TOP of prompt_01_start.txt and before it in outline
+r_2n_3    cleanup       - Remove markers from all other prompt files
+
+r_2o__ marker_file      - External marker file tracking
+r_2o_1    naming        - File format: prompt_xx_-YOU_ARE_HERE.txt (xx = active prompt number)
+r_2o_2    hyphen        - Hyphen ensures file sorts before corresponding prompt file
+r_2o_3    sync          - Update when marker moves between prompt files
+r_2o_4    reset         - Reset to prompt_00_-YOU_ARE_HERE.txt on reset command
 
 //////////////////////////////////////////////////////////////////////////////// 
