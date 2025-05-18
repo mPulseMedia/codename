@@ -19,7 +19,9 @@ r_2a13    filenum       - Two-digit number in filename (e.g., 02 in rule_02_prom
 r_2a14    file_kernal   - Collection of core files that implement the codename methodology
 
 r_2b__ process          - Process for prompts
-r_2b_1    command       - When "do" is typed in chat, locate the /// YOU ARE HERE /// marker
+r_2b_1    command       - When "do" is typed in chat, locate the /// YOU ARE HERE /// marker;
+                          if followed by a specific prompt group (e.g., "do p_1a"), process only
+                          that group and move the marker afterwards as the last action
 r_2b_2    sync          - If markers are out of sync then first ask what to do -- because it isn't clear which one to choose
 r_2b_3    tracking      - Find the marker in prompt_files to determine next actions
 r_2b_4    retrieval     - Retrieve and process the next prompt or prompt_group for execution
@@ -43,17 +45,22 @@ r_2c_7    next          - Clearly identify the next prompt based on marker posit
 r_2c_8    syntax        - Use triple-slash format: /// YOU ARE HERE ///
 r_2c_9    removal       - Remove marker from previous file when moving to next file
 r_2c10    transition    - Markers should only exist in the current active file and outline file
+r_2c11    group_process - When processing a specific prompt group (e.g., "do p_1a"), move the marker 
+                          to the end of that group as the final step after processing is complete,
+                          and update the outline file to match progress
 
 r_2d__ implement        - Implementing prompts efficiently
 r_2d_1    isolation     - Execute only the relevant prompt rather than entire prompt_group or files
 r_2d_2    focus         - Keep implementation focused on current task without scope creep
-r_2d_3    completion    - Complete one prompt before moving to the next
+r_2d_3    completion    - Complete one prompt before moving to the next, always moving the marker
+                          as the final step of completion
 r_2d_4    verify        - Verify implementation meets requirements before proceeding
 r_2d_5    explicit      - Only implement what is explicitly requested, nothing more
 r_2d_6    minimal       - Use the simplest implementation that satisfies requirements
 
 r_2e__ document         - Documenting process
-r_2e_1    notes         - Add implementation notes directly after executing a prompt
+r_2e_1    notes         - Add implementation notes directly after executing a prompt, confirming
+                          marker movement as part of implementation completion
 r_2e_2    outcomes      - Document specific outcomes, changes, and decisions made
 r_2e_3    challenges    - Note any challenges encountered and their resolutions
 r_2e_4    next          - Include recommendations for next steps after completion
