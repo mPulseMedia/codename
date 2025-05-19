@@ -1,0 +1,252 @@
+////////////////////////////////////////////////////////////////////////////////
+
+rule_02_prompt
+
+r_2a__ terms             - Standard prompt terminology
+r_2a_1    file           - Physical text file containing prompts
+r_2a_2    group          - Collection of related prompts within a prompt_file
+r_2a_3    prompt         - Written prompts that were or will be entered to an AI copilot
+r_2a_4    summary        - Short description of what the prompt does and appears as the first line in the prompt
+r_2a_5    task_name      - Name for a task 
+r_2a_6    task           - Detailed implementation instruction within a prompt
+r_2a_7    marker         - Indicator showing current execution position within prompt files
+r_2a_8    rule           - Established guidelines and constraints for project workflow
+r_2a_9    separator      - Visual divider between sections in files
+r_2a10    file           - Digital document containing structured content
+r_2a11    alignment      - Visual arrangement for readability and structure
+r_2a12    id             - Alphanumeric id pattern used in documentation (r_1a__, p_2b_3)
+r_2a13    filenum        - Two-digit number in filename (e.g., 02 in rule_02_prompt.txt)
+r_2a14    file_kernal    - Collection of core files that implement the codename methodology
+r_2a15    prompt_file_current - The prompt file containing the marker (/// YOU ARE HERE ///)
+r_2a16    prompt_group_current - The prompt group that was most recently executed
+r_2a17    prompt_file_past - Any prompt file with a number less than prompt_file_current
+r_2a18    prompt_file_future - Any prompt file with a number greater than prompt_file_current
+r_2a19    prompt_group_past - Any prompt group that has already been executed
+r_2a20    prompt_group_future - Any prompt group that has not yet been executed
+
+r_2b__ process          - Process for prompts
+r_2b_1    command        - "do" executes prompt_group_current at marker position; specific group formats: "do p_1a"
+r_2b_2    sync           - If markers are out of sync then first ask what to do -- because it isn't clear which one to choose
+r_2b_3    tracking       - Find the marker in prompt_file_current to determine next actions
+r_2b_4    retrieval      - Retrieve and process the next prompt_group_current for execution
+r_2b_5    control        - Only execute one prompt_group_current at a time for controlled progress
+r_2b_6    scope          - Maintain clear boundaries around the current execution scope
+r_2b_7    limits         - Don't create features, files, or functionality not directly requested
+r_2b_8    update         - "update prompts" command: review requirement files and update prompt_file_future
+                          files to incorporate all appropriate requirements; only update prompts
+                          below or after the marker position, never prompt_file_past
+r_2b_9    interactive    - Never execute commands that require user interaction or confirmation:
+                          1) Process files one at a time to avoid wildcard expansion prompts
+                          2) Use explicit file paths instead of patterns when deleting
+                          3) Check file existence before operations to avoid prompts
+                          4) Structure commands to avoid "are you sure" prompts
+                          5) If a command might prompt, break it into smaller steps
+
+r_2c__ commands         - Chat command definitions and groups
+r_2c_1    do_group      - Execution commands:
+                          1) "do" - Execute prompt_group_current at marker position
+                          2) "do [group]" - Execute specific group (e.g., "do p_1a")
+                          Behavior:
+                            - Move marker to TOP of prompt_file_current
+                            - Process from marker position
+                            - Move marker to next prompt_file_future after completion
+
+r_2c_2    update_group  - Update commands:
+                          1) "update prompts" - Update prompt files based on requirements
+                          Behavior:
+                            - Review requirement files
+                            - Update only prompt_file_future files
+                            - Only modify prompts after marker position
+                            - Never modify prompt_file_past files
+                            - Never modify requirement files
+
+r_2c_3    reset_group   - Reset commands:
+                          1) "reset marker" - Restore markers to initial positions
+                          2) "reset prompts" - Reset all prompts to initial state
+                          3) "reset codenames" - Clear codename files
+                          4) "reset app" - Reset application files
+                          Behavior:
+                            - Restore files to initial state
+                            - Remove markers from prompt_file_past files
+                            - Update prompt_outline.txt appropriately
+                            - Clear relevant logs and history
+
+r_2c_4    recognition   - Command recognition rules:
+                          1) Recognize command variations (e.g., "reset the prompts")
+                          2) Execute full command sequence when intent is clear
+                          3) Ask for confirmation only if intent is ambiguous
+                          4) Maintain consistent behavior across variations
+
+r_2d__ marker           - Marker format and position
+r_2d_1    format         - Use triple-slash format: /// YOU ARE HERE ///
+r_2d_2    initial        - Place marker at TOP of prompt_01_start.txt and before it in outline
+r_2d_3    position       - Marker must be placed at TOP of prompt_file_current, immediately after separator
+r_2d_4    single         - Only one marker exists in prompt_file_current and outline file
+r_2d_5    timing         - Marker movement occurs:
+                          1) Before processing: Move marker to TOP of target file when "do" command is issued
+                          2) After completion: Remove marker from completed file and move to TOP of next file
+r_2d_6    sequence       - Marker movement sequence for "do" command:
+                          1) Remove marker from current position in outline
+                          2) Remove marker from current file if it exists
+                          3) Add marker to TOP of target file
+                          4) Add marker to corresponding position in outline
+                          5) Process the file
+                          6) After completion, repeat steps 1-4 for next file
+
+r_2e__ implement        - Implementing prompts efficiently
+r_2e_1    isolation      - Execute only the relevant prompt rather than entire prompt_group or files
+r_2e_2    focus          - Keep implementation focused on current task without scope creep
+r_2e_3    complete       - Finish one prompt/group before moving to the next
+r_2e_4    verify         - Verify implementation meets requirements before proceeding
+r_2e_5    explicit       - Only implement what is explicitly requested, nothing more
+r_2e_6    minimal        - Use the simplest implementation that satisfies requirements
+
+r_2f__ brevity          - Brief chat messages
+r_2f_1    concise        - Keep chat responses approximately half the typical length
+r_2f_2    direct         - Provide direct, to-the-point answers without excessive explanations
+r_2f_3    essential      - Include only essential information needed to address the query
+r_2f_4    minimal        - Minimize contextual explanations unless specifically requested
+r_2f_5    action         - Focus on actions taken rather than explaining process details
+r_2f_6    examples       - Include minimal examples only when necessary for clarity
+r_2f_7    format         - Format chat responses using nested bullet points:
+                          1) Use short, single-line bullets for main points
+                          2) Indent sub-points with 2 spaces
+                          3) Maximum 3 levels of nesting
+                          4) Each bullet should be a complete thought
+                          5) Use consistent indentation for each level
+r_2f_8    structure      - Structure chat responses as:
+                          1) Brief summary (1-2 lines)
+                          2) Action taken (nested bullets)
+                          3) Next steps (if any)
+
+r_2g__ outline          - Outline prompt format
+r_2g_1    toplevel       - Only include the summaries of each prompt in prompt_groups
+r_2g_2    past           - Make sure the summaries in prompt_group_past match
+r_2g_3    future         - Populate prompt_group_future summaries
+r_2g_4    marker         - Include marker in prompt_outline_file, synchronized with prompt_file_current
+r_2g_5    reference      - Follow general outline file rules defined in rule_03_format r_3x__
+r_2g_6    scope          - Include only prompt_group_names for prompt_group_future in prompt_outline; 
+                          don't create separate files for future prompt groups
+
+r_2h__ convention       - Prompt convention usage
+r_2h_1    everything     - Start each prompt_group with a brief summary explaining purpose
+r_2h_2    summary        - Use consistent format for all prompt_summaries
+r_2h_3    name           - Use consistent identifiers (e.g., prompt_struct) as references
+r_2h_4    style          - Write tasks in present tense imperative form for clarity
+r_2h_5    reuse          - Allow revisiting and modifying prompts as needed during development
+r_2h_6    sync           - When creating or modifying prompt content, keep the filename in sync
+                           with the prompt title and update all references in outline file
+
+r_2i__ intro            - Format introductions
+r_2i_1    overview       - Include overview of prompts with clear organizational structure
+r_2i_2    purpose        - State clear purpose summary at the beginning of each prompt_group 
+r_2i_3    concise        - Keep summary brief while providing necessary context
+r_2i_4    scannable      - Format for easy scanning with consistent visual hierarchy
+
+r_2j__ style            - Style summaries
+r_2j_1    omit           - Omit "You" when AI assistant is implied subject in prompt_summaries
+r_2j_2    action         - Use action verbs (create, implement, design) for clear direction
+r_2j_3    we             - Use "we" for collaborative review steps to indicate partnership
+r_2j_4    specificity    - Be specific about expected outcomes for each instruction point
+
+r_2k__ reuse            - Reuse prompts
+r_2k_1    iteration      - Allow for iterative refinement of prompts throughout development
+r_2k_2    modification   - Make targeted modifications to address changing requirements
+r_2k_3    documentation  - Document changes to prompts with clear rationale for adjustments
+r_2k_4    versioning     - Indicate version changes when modifying previously executed prompts
+
+r_2l__ version          - Version control
+r_2l_1    reason         - Document reason for modification to maintain implementation history
+r_2l_2    tracking       - Enable tracking of evolution of prompts throughout development
+r_2l_3    clarity        - Provide clear versioning to avoid confusion about current state
+r_2l_4    reference      - Include references to previous versions for complete documentation
+
+r_2m__ movement         - Marker movement rules
+r_2m_1    do_command     - "do" without parameters: 
+                          1) Move marker to TOP of prompt_file_current if not already there
+                          2) Process from marker position
+                          3) After completion, move marker to TOP of next prompt_file_future
+r_2m_2    do_group       - "do [group]": 
+                          1) Move marker to TOP of file containing group
+                          2) Process only that prompt_group_current
+                          3) After completion, move marker to TOP of next prompt_file_future
+r_2m_3    completion     - Move marker to TOP of next prompt_file_future after completing any prompt processing
+r_2m_4    placement      - Marker must be at TOP of prompt_file_current, immediately after separator
+r_2m_5    progress       - Move marker to TOP of next prompt_file_future when prompt_file_current is fully processed
+r_2m_6    sync           - Keep markers synchronized between prompt_file_current and prompt_outline_file:
+                          1) Marker in outline must point to current active file
+                          2) Marker in current file must be at TOP
+                          3) No markers in prompt_file_past files
+r_2m_7    remove         - When moving marker to next file:
+                          1) Remove marker from current prompt file (prompt_file_past)
+                          2) Remove marker from corresponding position in prompt_outline_file
+                          3) Add marker to TOP of next prompt_file_future
+                          4) Add marker to corresponding position in prompt_outline_file
+r_2m_8    verify         - Double-check marker positions after completion to ensure:
+                          1) markers exist in prompt_file_current and prompt_outline_file
+                          2) marker_file name matches prompt_file_current
+                          3) marker positions in prompt_file_current and prompt_outline_file are consistent
+                          4) markers are not at the end of any file
+                          5) no markers exist in prompt_file_past files
+
+r_2n__ reset            - Reset command handling
+r_2n_1    everything     - "reset everything" command: execute in sequence:
+                          1) Execute "reset marker" command first
+                          2) After marker reset completes, execute "reset prompt" command
+                          3) After prompt reset completes, execute "reset app" command
+                          4) Execute each command separately to avoid interactive prompts
+                          5) Wait for each command to complete before starting next
+                          6) Process one file at a time to avoid user prompts
+
+r_2n_2    marker        - "reset marker" command:
+                          1) Place marker at TOP of prompt_01_start.txt
+                          2) Place marker before prompt_01_start.txt in prompt_outline.txt
+                          3) Remove marker from all other files one at a time
+                          4) Execute as single command to avoid interactive prompts
+
+r_2n_3    prompt       - "reset prompt" command: 
+                          1) Delete future prompt files one at a time:
+                             a) Check if prompt_02_format.txt exists, delete if it does
+                             b) Check if prompt_03_*.txt exists, delete each file individually
+                             c) Check if prompt_04_*.txt exists, delete each file individually
+                             d) Continue for any higher numbered prompt files individually
+                          2) Update prompt_outline.txt to:
+                             a) Remove ALL entry for prompt_file_future file
+                             b) Remove ALL group for prompt_file_future file
+                             c) Keep only marker and prompt_01_start.txt section
+                          3) Clear prompt_00_log.txt to empty state
+                          4) Execute each file deletion separately to avoid interactive prompts
+
+r_2n_4    app           - "reset app" command: 
+                          1) Delete app directory contents one file at a time:
+                             a) Check if kernal/app/js exists, delete if it does
+                             b) Check if kernal/app/css exists, delete if it does
+                             c) Check if kernal/app/index.html exists, delete if it does
+                             d) List and delete each remaining file in kernal/app individually
+                          2) Create empty app directory if it does not exist
+                          3) Never use wildcards or patterns that might trigger prompts
+                          4) Check existence before each deletion to avoid errors
+
+r_2o__ marker_file      - External marker file tracking
+r_2o_1    naming         - File format: prompt_xx_-YOU_ARE_HERE.txt (xx = active prompt number)
+r_2o_2    hyphen         - Hyphen ensures file sorts before corresponding prompt file
+r_2o_3    sync           - Update when marker moves between prompt files
+r_2o_4    reset          - Reset to prompt_00_-YOU_ARE_HERE.txt on "reset marker" command
+r_2o_5    verify         - Ensure only one marker file exists and its name correctly
+                           corresponds to the current active prompt file
+
+r_2p__ requirements     - Requirements management
+r_2p_1    scope          - When updating prompts files from requirements:
+                          1) Never modify prompt_01_start.txt during update command
+                          2) Only populate tasks for prompt_group_current and next prompt_group_future
+                          3) Create new prompt_file_future files as needed
+r_2p_2    future         - For prompt_group_future beyond next, only include prompt_group_name
+                          without populating detailed tasks
+r_2p_3    preserve       - Never modify prompt_file_past; these are considered already processed
+r_2p_4    update         - Only update prompts in subsequent prompt_file_future files:
+                          1) Never modify prompt_01_start.txt during update command
+                          2) Create new prompt_file_future files as needed
+                          3) Update only files that come after prompt_file_current
+                          4) Maintain proper file numbering sequence
+
+//////////////////////////////////////////////////////////////////////////////// 

@@ -4,19 +4,24 @@ req_01_app
 
 q_1a__ name_list       - Codename convention requirements
 q_1a_1    app          - Required codenames for application implementation:
-                          window - Main application window
-                          page - Content container for the application
-                          block - Text content element
-                          format - Formatting utilities for content display
-
+                          1) window - Main application window container
+                          2) page - Primary content container for the application
+                          3) block - Reusable text content element
 
 q_2a__ app             - Application requirements
-q_2a_1    hello_world  - Create a webpage with "hello world" that appears in the center:
-                          - Implement basic HTML structure
-                          - Center text using CSS
-q_2a_2    index        - Place index.html in the app directory on the top level
-q_2a_3    minimal      - Employ JavaScript and CSS files in app subdirectories:
-                          - Create app/js/ directory for JavaScript files
-                          - Create app/css/ directory for CSS files
+q_2a_1    structure    - Create basic webpage structure:
+                          1) Create index.html with proper HTML5 doctype
+                          2) Include necessary meta tags for viewport and charset
+                          3) Set up basic HTML structure with head and body sections
+q_2a_2    content      - Implement "hello world" content:
+                          1) Add "hello world" text to the page
+                          2) Center the text both horizontally and vertically
+                          3) Ensure text is visible and properly contained
+q_2a_3    organization - Set up project directory structure:
+                          1) Place index.html in the app directory root
+                          2) Create and organize supporting directories:
+                             - app/js/ for JavaScript files
+                             - app/css/ for stylesheet files
+                          3) Ensure all paths in HTML reference correct locations
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,145 @@
+////////////////////////////////////////////////////////////////////////////////
+
+rule_03_format
+
+r_3m__ files             - File naming conventions
+r_3m_1    convention     - Follow established naming convention for all documentation
+r_3m_2    descriptive    - Choose descriptive names that reflect file content and purpose
+r_3m_3    consistent     - Maintain consistent file naming format across documentation
+r_3m_4    extension      - Use .txt extension for all documentation files
+r_3m_5    structure      - Organize files logically in directory structure
+r_3m_6    filenum        - Use two-digit number pattern in filenames (e.g., 01, 02, 03)
+r_3m_7    file_kernal    - Collection of core files that implement the codename methodology
+
+r_3j__ format            - Document formatting
+r_3j_1    consistency    - Maintain consistent formatting across all project documents
+r_3j_2    readability    - Ensure high readability with clear visual hierarchy and spacing
+r_3j_3    structure      - Follow structured approach to organization of content
+r_3j_4    alignment      - Use proper alignment for enhanced visual scanning and navigation
+
+r_3k__ structure         - Document structure
+r_3k_1    separator      - Horizontal line of forward slashes for major section breaks
+r_3k_2    terminology    - Follow prompt terminology defined in rule_02_prompt
+r_3k_3    spacing        - Maintain consistent spacing between structural elements
+r_3k_4    alignment      - Align related elements (task_name, summary, etc.) for clarity
+r_3k_5    hierarchy      - Create clear visual distinction between different levels
+
+r_3r__ header            - File header format
+r_3r_1    first          - Begin file with separator line (80 forward slashes)
+r_3r_2    blank          - Include blank line after separator 
+r_3r_3    filename       - Display file name on third line without "rule_group" suffix
+r_3r_4    simplicity     - Keep header simple: separator, blank line, file name
+r_3r_5    consistency    - Use identical header format across all rule files
+
+r_3s__ separator         - Visual divider between sections
+r_3s_1    boundaries     - Place before and after each major section for clear separation
+r_3s_2    visual         - Create clear visual boundaries between major content sections
+r_3s_3    width          - Ensure separators are exactly 80 characters wide for consistency
+r_3s_4    complete       - Include separator at beginning and end of document
+r_3s_5    char           - Use forward slashes (/) for separator lines
+r_3s_6    consistency    - Apply the same separator style across all documentation files
+
+r_3l__ display           - Group display format
+r_3l_1    position       - Display group identifier on a separate line after separator
+r_3l_2    format         - Format as "filename group" without dash or summary
+r_3l_3    standalone     - Keep group identifier on its own line, separate from content
+r_3l_4    hierarchy      - Use this placement to establish clear parent-child relationship
+
+r_3o__ numbering         - Rule numbering system
+r_3o_1    filetype       - Use p for prompt files, r for rule files and q for req files as prefix to the id
+r_3o_2    letters        - Use lowercase letters in alphabetical sequence for main sections
+r_3o_3    sections       - Use double underscore (__) for main section ids (r_1a__)
+r_3o_4    underscore     - Use underscore when number is less than 10 but (r_1a10) when any is over 10
+r_3o_5    digits         - Omit underscore before double-digit numbers (r_1c10 not r_1c_10)
+r_3o_6    spacing        - Align all ids consistently with proper spacing
+r_3o_7    indent         - Indent tasks consistently (4 spaces from section ids)
+r_3o_8    alignment      - Align all task names at consistent position
+r_3o_9    consistency    - Maintain consistent numbering pattern throughout document
+
+r_3n__ rules             - Rule format standards
+r_3n_1    organization   - Organize rules in hierarchical structure with consistent levels
+r_3n_2    id             - Unique alphanumeric for each line in the file_kernal
+r_3n_3    wrapped        - Align wrapped text with the starting position of the description
+r_3n_4    task           - Begin task names without leading underscore (example not _example)
+r_3n_5    spacing        - Maintain consistent indentation for all hierarchy levels
+r_3n_6    headers        - Use prominent headers for major rule sections
+r_3n_7    separator      - Use separators between major rule sections
+r_3n_8    alignment      - Align all descriptions to a consistent column position
+
+r_3p__ tasks             - Task name formatting
+r_3p_1    noprefix       - Begin task names without leading underscore (example not _example)
+r_3p_2    lowercase      - Use lowercase letters for all task names
+r_3p_3    snake          - Use snake_case for multi-word task names
+r_3p_4    alignment      - Align all task names consistently (column position 15)
+r_3p_5    brevity        - Keep task names concise and descriptive (1-2 words preferred)
+r_3p_6    consistency    - Use consistent terminology across all task names
+r_3p_7    descriptive    - Choose meaningful terms that reflect content purpose
+r_3p_8    nouns          - Use nouns for descriptive items (format, spacing)
+r_3p_9    verbs          - Use verbs for action items (create, define)
+
+r_3q__ dash              - Dash and description formatting
+r_3q_1    position       - Place dash at column position 25 for all entries
+r_3q_2    capital        - Start all descriptions with capital letter
+r_3q_3    punctuation    - No ending punctuation for description lines
+r_3q_4    spacing        - Use consistent spacing between dash and description
+r_3q_5    alignment      - Align all descriptions at column position 27
+r_3q_6    wrapping       - Align wrapped text with the starting position of the description
+r_3q_7    indentation    - Maintain consistent indentation in wrapped lines (29 spaces)
+
+r_3c__ naming            - File and section naming rules
+r_3c_1    reference      - Create identifiers that serve as both plan references and history
+r_3c_2    hierarchy      - Follow established numbering convention for hierarchical structure
+r_3c_3    consistency    - Maintain naming consistency across all project documentation
+r_3c_4    snake          - Use snake_case for all identifiers with meaningful component parts
+
+r_3x__ kernal_format     - Kernal file (prompt, req, rule) format and usage
+r_3x_1    purpose        - Create outline files (e.g. prompt_00_outline.txt) to provide a central reference to file groups
+r_3x_2    naming         - Name as filegroup_00_outline.txt (rule_00_outline.txt, req_00_outline.txt)
+r_3x_3    identification - Include group summaries from all files of the same type
+r_3x_4    structure      - First list file names followed by section group summaries
+r_3x_5    grouping       - Group summaries under their respective files with blank lines
+r_3x_6    completeness   - Include all section group IDs and descriptions for each file
+r_3x_7    index          - Always include reference to kernal_codename.txt (or app/app_codename.txt) as the last entry
+r_3x_8    maintenance    - Update outline files when adding or modifying section groups
+r_3x_9    alignment      - Follow dash alignment rules consistent with other files
+r_3x10    index_format   - Index_format is used for codename index files (such as codename_kernal.txt and codename_app.txt) and consists of a grouped, aligned list of codenames with short descriptions
+
+r_3u__ communicate       - Communication guidelines
+r_3u_1    clarity        - Ensure clear communication about changes and updates
+r_3u_2    specificity    - Be specific about which sections or elements are being referenced
+r_3u_3    consistency    - Maintain consistent terminology in communications about files
+r_3u_4    efficiency     - Keep communications focused and efficient for productive work
+
+r_3v__ reference         - Code references
+r_3v_1    format         - Format references consistently for easy identification
+r_3v_2    example        - Example: applied rule_03_format r_3q_5 to document
+r_3v_3    specific       - Reference specific line numbers or sections when applicable
+r_3v_4    tracking       - Support tracking of changes through clear reference usage
+
+r_3w__ updates           - Concise updates
+r_3w_1    bullets        - Use bullet points for multiple changes to enhance readability
+r_3w_2    minimal        - Minimize explanatory text to focus on actual changes made
+r_3w_3    focus          - Focus on what changed rather than explaining rationale
+r_3w_4    actionable     - Ensure updates provide actionable information for next steps
+
+r_3y__ dir               - Directory structure organization
+r_3y_1    root           - Keep kernal as the root directory for all methodology files
+r_3y_2    organization   - Organize files into subdirectories by type (prompt, req, rule)
+r_3y_3    prompt         - Store all prompt files in the prompt/ subdirectory
+r_3y_4    req            - Store all requirement files in the req/ subdirectory
+r_3y_5    rule           - Store all rule files in the rule/ subdirectory
+r_3y_6    shared         - Keep kernal_codename.txt (and app/app_codename.txt) and kernal_dir_list.txt in the root directory
+r_3y_7    consistency    - Maintain consistent naming conventions across all directories
+
+r_3z__ kernal_dir        - Kernal directory organization
+r_3z_1    purpose        - Organize files by type to improve project navigation and maintainability
+r_3z_2    structure      - Follow a consistent three-directory structure (prompt, req, rule)
+r_3z_3    reference      - Use kernal_dir_list.txt to document the directory structure
+r_3z_4    flexibility    - Allow for future expansion with additional subdirectories as needed
+r_3z_5    access         - Ensure all files remain accessible through consistent directory paths
+r_3z_6    path           - Use relative paths when referencing files within the kernal directory
+r_3z_7    forward        - Use forward slashes for path separators (e.g., prompt/prompt_01_start.txt)
+r_3z_8    explicit       - Include the full path from the kernal directory when referencing files
+r_3z_9    subdirectory   - Always include the appropriate subdirectory when referencing files
+
+//////////////////////////////////////////////////////////////////////////////// 
