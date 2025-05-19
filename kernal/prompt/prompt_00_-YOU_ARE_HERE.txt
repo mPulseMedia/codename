@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-prompt_01_-YOU_ARE_HERE
+prompt_00_-YOU_ARE_HERE
 
 This file serves as a dynamic marker indicator that shows which prompt file 
 currently contains the /// YOU ARE HERE /// marker.

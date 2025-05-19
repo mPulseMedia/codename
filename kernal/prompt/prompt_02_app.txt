@@ -1,0 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////
+
+prompt_02_app
+
+p_2a__ web_basics       - Basic web page setup
+p_2a_1    minimal       - Create a minimal HTML/CSS/JavaScript structure
+p_2a_2    hello_world   - Display "Hello World" text centered on the page
+p_2a_3    styling       - Apply basic styling to center the text both horizontally and vertically
+
+p_2b__ codename_apply   - Apply codename conventions
+p_2b_1    window        - Use window codename for main application window
+p_2b_2    page          - Use page codename for content container elements
+p_2b_3    block         - Use block codename for text content elements
+p_2b_4    format        - Use format codename for styling and formatting utilities
+p_2b_5    validate      - Ensure all code follows the codename conventions in rule_01_codename
+
+//////////////////////////////////////////////////////////////////////////////// 
