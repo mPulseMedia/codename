@@ -1,8 +1,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-/// YOU ARE HERE ///
-
 prompt_01_start
+
+/// YOU ARE HERE ///
 
 p_1a__ flow             - Flow of prompt processing
 p_1a_1    command       - When I say "do prompt (group|file) xxx", then grab that prompt (prompt_group) and do it

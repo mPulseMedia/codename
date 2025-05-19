@@ -3,35 +3,35 @@
 rule_01_codename
 
 r_1a__ choice             - Choose words carefully
-r_1a_1    everything     - IMPORTANT: apply codename convention to every single identifier that 
+r_1a_1    everything      - IMPORTANT: apply codename convention to every single identifier that 
                            you generate: variables, functions, CSS classnames, 
                            constants, parameters, file names, event names, properties, 
                            element IDs; . Don't leave anything out that you can name!
-r_1a_2    case           - All codenames in snake_case (user_name not userName) 
-r_1a_3    boolean        - End with _is for boolean variables (example: visible_is, active_is, valid_is)
-r_1a_4    plurality      - Use singular+_list, never pluralize (name_list NOT names)
-r_1a_5    verb           - Use present tense base verbs without modifiers for clarity
+r_1a_2    case            - All codenames in snake_case (user_name not userName) 
+r_1a_3    boolean         - End with _is for boolean variables (example: visible_is, active_is, valid_is)
+r_1a_4    plurality       - Use singular+_list, never pluralize (name_list NOT names)
+r_1a_5    verb            - Use present tense base verbs without modifiers for clarity
  
-r_1b__ form              - Form verbs properly
-r_1b_1    simple         - Use enable, not enabled for consistency and clarity
-r_1b_2    avoid          - Use load, not loading; create, not creating
-r_1b_3    example        - filter_apply (not filter_applying)
+r_1b__ form               - Form verbs properly
+r_1b_1    simple          - Use enable, not enabled for consistency and clarity
+r_1b_2    avoid           - Use load, not loading; create, not creating
+r_1b_3    example         - filter_apply (not filter_applying)
                            data_save (not data_saving or data_saved)
                            user_authenticate (not user_authenticating)
 
-r_1c__ abbr              - Abbreviate appropriately
-r_1c_1    preferred      - understood abbreviation (ex: config, param)
-r_1c_2    ele            - element (HTML/DOM element)
-r_1c_3    prev           - previous (prior item in sequence)
-r_1c_4    str            - string (text data type)
-r_1c_5    var            - variable (named data container)
-r_1c_6    msg            - message (communication or display text)
-r_1c_7    tab            - tablet (device type context)
-r_1c_8    mob            - mobile (device type context)
-r_1c_9    func           - function (callable code block)
-r_1c10    var            - variable (named value holder) 
-r_1c11    cn             - codename (project-specific term)
-r_1c12    id             - alphanumeric id pattern used in documentation (r_1a__, p_2b_3)
+r_1c__ abbr               - Abbreviate appropriately
+r_1c_1    preferred       - understood abbreviation (ex: config, param)
+r_1c_2    ele             - element (HTML/DOM element)
+r_1c_3    prev            - previous (prior item in sequence)
+r_1c_4    str             - string (text data type)
+r_1c_5    var             - variable (named data container)
+r_1c_6    msg             - message (communication or display text)
+r_1c_7    tab             - tablet (device type context)
+r_1c_8    mob             - mobile (device type context)
+r_1c_9    func            - function (callable code block)
+r_1c10    var             - variable (named value holder) 
+r_1c11    cn              - codename (project-specific term)
+r_1c12    id              - alphanumeric id pattern used in documentation (r_1a__, p_2b_3)
 
 r_1d__ length             - Length of terms
 r_1d_1    readability     - long terms reduce readability and search effectiveness
@@ -108,11 +108,21 @@ r_1k_2    css             - In css files, no blank spaces between class definiti
 r_1k_3    readability     - Balance compactness with readability
 r_1k_4    sections        - Use comments to delineate logical sections
 
-r_1l__ verify            - Verification requirements
-r_1l_1    review         - Review and ensure all code follows established codename conventions
-r_1l_2    check          - Verify that all identifiers adhere to the snake_case format
-r_1l_3    boolean        - Confirm boolean variables end with _is suffix
-r_1l_4    list           - Ensure all lists use singular+_list naming pattern
-r_1l_5    update         - Update codename_index with any new terms introduced
+r_1l__ verify             - Verification requirements
+r_1l_1    review          - Review and ensure all code follows established codename conventions
+r_1l_2    check           - Verify that all identifiers adhere to the snake_case format
+r_1l_3    boolean         - Confirm boolean variables end with _is suffix
+r_1l_4    list            - Ensure all lists use singular+_list naming pattern
+r_1l_5    update          - Update kernal_codename.txt (and app/app_codename.txt) with any new terms introduced
+
+r_1m__ separation         - Clarify separation of codenames (colonel vs. app)
+r_1m_1    kernal_cn       - Only codenames that relate to the kernal (for example, prompt, req, rule, marker, outline, etc.) are to be put into kernal_codename.txt
+r_1m_2    app_cn          - Only codenames that apply just to the app (for example, window, page, block, filter, component, data, type, storage, search) are to be put into app/app_codename.txt
+
+r_1n__ code_name_roll     - Generate codenames from directory structure
+r_1n_1    base            - Use root term as starting point for codename generation
+r_1n_2    append          - Build codename by appending directory/file names to base term
+r_1n_3    display         - When codename matches known root, list it under that root
+r_1n_4    verify          - Ensure all generated codenames follow established rules
 
 //////////////////////////////////////////////////////////////////////////////// 

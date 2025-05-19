@@ -92,16 +92,17 @@ r_3c_2    hierarchy      - Follow established numbering convention for hierarchi
 r_3c_3    consistency    - Maintain naming consistency across all project documentation
 r_3c_4    snake          - Use snake_case for all identifiers with meaningful component parts
 
-r_3x__ outline           - Outline file format and usage
-r_3x_1    purpose        - Create outline files to provide a central reference to file groups
+r_3x__ kernal_format     - Kernal file (prompt, req, rule) format and usage
+r_3x_1    purpose        - Create outline files (e.g. prompt_00_outline.txt) to provide a central reference to file groups
 r_3x_2    naming         - Name as filegroup_00_outline.txt (rule_00_outline.txt, req_00_outline.txt)
 r_3x_3    identification - Include group summaries from all files of the same type
 r_3x_4    structure      - First list file names followed by section group summaries
 r_3x_5    grouping       - Group summaries under their respective files with blank lines
 r_3x_6    completeness   - Include all section group IDs and descriptions for each file
-r_3x_7    index          - Always include reference to codename_index as the last entry
+r_3x_7    index          - Always include reference to kernal_codename.txt (or app/app_codename.txt) as the last entry
 r_3x_8    maintenance    - Update outline files when adding or modifying section groups
 r_3x_9    alignment      - Follow dash alignment rules consistent with other files
+r_3x10    index_format   - Index_format is used for codename index files (such as codename_kernal.txt and codename_app.txt) and consists of a grouped, aligned list of codenames with short descriptions
 
 r_3u__ communicate       - Communication guidelines
 r_3u_1    clarity        - Ensure clear communication about changes and updates
@@ -127,7 +128,7 @@ r_3y_2    organization   - Organize files into subdirectories by type (prompt, r
 r_3y_3    prompt         - Store all prompt files in the prompt/ subdirectory
 r_3y_4    req            - Store all requirement files in the req/ subdirectory
 r_3y_5    rule           - Store all rule files in the rule/ subdirectory
-r_3y_6    shared         - Keep codename_index.txt and kernal_dir_list.txt in the root directory
+r_3y_6    shared         - Keep kernal_codename.txt (and app/app_codename.txt) and kernal_dir_list.txt in the root directory
 r_3y_7    consistency    - Maintain consistent naming conventions across all directories
 
 r_3z__ kernal_dir        - Kernal directory organization

@@ -1,15 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
-codename_index
+codename_kernal
 
 codename              - Specific "term of art" used by a set of project files
 codename_description  - The short descriptive text that follows the codename in the index
 codename_index        - A presentation of an assembled list of the codenames referenced within a set of project files
 
 file                  - Digital document containing structured content
+file_kernal           - Collection of core files that implement the codename methodology
 file_name             - The name given to a file, that may be referred to without the extension
-
-filter                - Filtering functionality and controls
 
 group_separator       - Visual divider between groups in files
 
@@ -18,26 +17,35 @@ index                 - Codename index functionality and navigation
 kernal                - Core files from which the codename methodology occurs
 kernal_dir            - Organized directory structure for codename methodology files
 kernal_dir_list       - File documenting the kernal directory structure
+kernal_prompt         - Collection of prompt-related files in kernal
+kernal_req            - Collection of requirement files in kernal
+kernal_rule           - Collection of rule files in kernal
 
 lookup                - Code snippet retrieval and display
-
-marker                - Indicator showing current execution position within prompt files
 
 outline               - Summary file containing group entries from related files
 
 prompt                - Written prompts that were or will be entered to an AI copilot
+prompt_current        - The active prompt being executed
+group_current         - The active group of prompts being executed
+file_current          - The active prompt file being processed
+prompt_future         - Prompts that are defined but not yet executed
+prompt_past           - Prompts that have been processed and completed
+prompt_outline        - Summary of prompt groups and their execution status
+prompt_outline_file   - Physical file containing the prompt outline
 prompt_00_outline     - Unique file within the kernal that lists past and future prompt_group_name
 prompt_01_start       - Starting workflow tasks
-prompt_02_tbd         - TBD workflow tasks
+prompt_02_app         - Application implementation tasks
 prompt_file           - Physical text file containing prompts
 prompt_group          - Collection of related prompts within a prompt_file
 prompt_group_name     - Name for a group of related prompts within a prompt_file
 prompt_name           - Identifier for the prompt 
 prompt_summary        - Short description of what the prompt does and appears as the first line in the prompt
 
-req_00_outline        - Summary file listing all requirement files and their purposes
-req_01_app            - TBD app requirements file
-req_02_codename       - TBD app codenames file
+req                  - Requirements for the project
+req_00_outline       - Summary file listing all requirement files and their purposes
+req_01_app           - Application requirements file
+req_02_format        - Formatting requirements file
 
 root                  - First term of a codename operations
 rule                  - Established guidelines and constraints for project workflow
@@ -49,7 +57,7 @@ rule_file             - Physical text file containing rules
 rule_group            - Collection of related rules within a rule_file
 rule_group_name       - Name for a group of related rules within a rule_file
 rule_name             - Identifier for the rule
-rule_outline          - Rule for outline file formatting and usage (see r_3x__)
+rule_outline          - Rule for outline file formatting and usage
 
 separator             - Visual divider between sections in files
 search                - Search-related functionality and interfaces

@@ -1,0 +1,17 @@
+////////////////////////////////////////////////////////////////////////////////
+
+req_02_format
+
+q_2a__ format          - Formatting requirements
+q_2a_1    text         - Style text elements:
+                          - Make "hello" text red
+                          - Make "world" text blue
+q_2a_2    circle       - Add circular container:
+                          - Draw circle around "hello world" text
+                          - Add shadow beneath circle (not behind)
+                          - Shadow should appear as if circle is above white surface
+q_2a_3    codename     - Required codenames for formatting:
+                          circle - Circular container element
+                          circle_shadow - Shadow beneath circle element
+
+////////////////////////////////////////////////////////////////////////////////

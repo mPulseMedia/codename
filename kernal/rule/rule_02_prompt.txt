@@ -2,74 +2,93 @@
 
 rule_02_prompt
 
-r_2a__ terms            - Standard prompt terminology
-r_2a_1    file          - Physical text file containing prompts
-r_2a_2    group         - Collection of related prompts within a prompt_file
-r_2a_3    prompt        - Written prompts that were or will be entered to an AI copilot
-r_2a_4    summary       - Short description of what the prompt does and appears as the first line in the prompt
-r_2a_5    task_name     - Name for a task 
-r_2a_6    task          - Detailed implementation instruction within a prompt
-r_2a_7    marker        - Indicator showing current execution position within prompt files
-r_2a_8    rule          - Established guidelines and constraints for project workflow
-r_2a_9    separator     - Visual divider between sections in files
-r_2a10    file          - Digital document containing structured content
-r_2a11    alignment     - Visual arrangement for readability and structure
-r_2a12    id            - Alphanumeric id pattern used in documentation (r_1a__, p_2b_3)
-r_2a13    filenum       - Two-digit number in filename (e.g., 02 in rule_02_prompt.txt)
-r_2a14    file_kernal   - Collection of core files that implement the codename methodology
+r_2a__ terms             - Standard prompt terminology
+r_2a_1    file           - Physical text file containing prompts
+r_2a_2    group          - Collection of related prompts within a prompt_file
+r_2a_3    prompt         - Written prompts that were or will be entered to an AI copilot
+r_2a_4    summary        - Short description of what the prompt does and appears as the first line in the prompt
+r_2a_5    task_name      - Name for a task 
+r_2a_6    task           - Detailed implementation instruction within a prompt
+r_2a_7    marker         - Indicator showing current execution position within prompt files
+r_2a_8    rule           - Established guidelines and constraints for project workflow
+r_2a_9    separator      - Visual divider between sections in files
+r_2a10    file           - Digital document containing structured content
+r_2a11    alignment      - Visual arrangement for readability and structure
+r_2a12    id             - Alphanumeric id pattern used in documentation (r_1a__, p_2b_3)
+r_2a13    filenum        - Two-digit number in filename (e.g., 02 in rule_02_prompt.txt)
+r_2a14    file_kernal    - Collection of core files that implement the codename methodology
 
 r_2b__ process          - Process for prompts
-r_2b_1    command       - "do" executes prompt at marker position; specific group formats: "do p_1a"
-r_2b_2    sync          - If markers are out of sync then first ask what to do -- because it isn't clear which one to choose
-r_2b_3    tracking      - Find the marker in prompt_files to determine next actions
-r_2b_4    retrieval     - Retrieve and process the next prompt or prompt_group for execution
-r_2b_5    control       - Only execute one prompt or prompt_group at a time for controlled progress
-r_2b_6    scope         - Maintain clear boundaries around the current execution scope
-r_2b_7    limits        - Don't create features, files, or functionality not directly requested
-r_2b_8    update        - "update prompts" command: review requirement files and update prompt
+r_2b_1    command        - "do" executes prompt_current at marker position; specific group formats: "do p_1a"
+r_2b_2    sync           - If markers are out of sync then first ask what to do -- because it isn't clear which one to choose
+r_2b_3    tracking       - Find the marker in file_current to determine next actions
+r_2b_4    retrieval      - Retrieve and process the next prompt_current or group_current for execution
+r_2b_5    control        - Only execute one prompt_current or group_current at a time for controlled progress
+r_2b_6    scope          - Maintain clear boundaries around the current execution scope
+r_2b_7    limits         - Don't create features, files, or functionality not directly requested
+r_2b_8    update         - "update prompts" command: review requirement files and update prompt_future
                           files to incorporate all appropriate requirements; only update prompts
-                          below or after the marker position, never those already processed
+                          below or after the marker position, never prompt_past
 
 r_2c__ marker           - Marker format and position
-r_2c_1    format        - Use triple-slash format: /// YOU ARE HERE ///
-r_2c_2    initial       - Place marker at TOP of prompt_01_start.txt and prompt_00_outline.txt on project start
-r_2c_3    position      - Place marker only at the TOP or BOTTOM of files, never in the middle
-r_2c_4    single        - Only one marker exists in the active prompt file and outline file
-r_2c_5    move_next     - After completing a file, move marker to TOP of next file in sequence
+r_2c_1    format         - Use triple-slash format: /// YOU ARE HERE ///
+r_2c_2    initial        - Place marker at TOP of prompt_01_start.txt and before it in outline
+r_2c_3    position       - Marker must be placed at TOP of file_current, immediately after separator
+r_2c_4    single         - Only one marker exists in file_current and outline file
+r_2c_5    timing         - Marker movement occurs:
+                          1) Before processing: Move marker to TOP of target file when "do" command is issued
+                          2) After completion: Remove marker from completed file and move to TOP of next file
+r_2c_6    sequence       - Marker movement sequence for "do" command:
+                          1) Remove marker from current position in outline
+                          2) Remove marker from current file if it exists
+                          3) Add marker to TOP of target file
+                          4) Add marker to corresponding position in outline
+                          5) Process the file
+                          6) After completion, repeat steps 1-4 for next file
 
 r_2d__ implement        - Implementing prompts efficiently
-r_2d_1    isolation     - Execute only the relevant prompt rather than entire prompt_group or files
-r_2d_2    focus         - Keep implementation focused on current task without scope creep
-r_2d_3    complete      - Finish one prompt/group before moving to the next
-r_2d_4    verify        - Verify implementation meets requirements before proceeding
-r_2d_5    explicit      - Only implement what is explicitly requested, nothing more
-r_2d_6    minimal       - Use the simplest implementation that satisfies requirements
+r_2d_1    isolation      - Execute only the relevant prompt rather than entire prompt_group or files
+r_2d_2    focus          - Keep implementation focused on current task without scope creep
+r_2d_3    complete       - Finish one prompt/group before moving to the next
+r_2d_4    verify         - Verify implementation meets requirements before proceeding
+r_2d_5    explicit       - Only implement what is explicitly requested, nothing more
+r_2d_6    minimal        - Use the simplest implementation that satisfies requirements
 
 r_2e__ document         - Documenting process
-r_2e_1    notes         - Add implementation notes directly after executing a prompt
-r_2e_2    outcomes      - Document specific outcomes, changes, and decisions made
-r_2e_3    challenges    - Note any challenges encountered and their resolutions
-r_2e_4    next          - Include recommendations for next steps after completion
-r_2e_5    depends       - Document any dependencies created or affected by implementation
+r_2e_1    notes          - Add implementation notes directly after executing a prompt
+r_2e_2    outcomes       - Document specific outcomes, changes, and decisions made
+r_2e_3    challenges     - Note any challenges encountered and their resolutions
+r_2e_4    next           - Include recommendations for next steps after completion
+r_2e_5    depends        - Document any dependencies created or affected by implementation
 
 r_2f__ brevity          - Brief chat messages
-r_2f_1    concise       - Keep chat responses approximately half the typical length
-r_2f_2    direct        - Provide direct, to-the-point answers without excessive explanations
-r_2f_3    essential     - Include only essential information needed to address the query
-r_2f_4    minimal       - Minimize contextual explanations unless specifically requested
-r_2f_5    action        - Focus on actions taken rather than explaining process details
-r_2f_6    examples      - Include minimal examples only when necessary for clarity
+r_2f_1    concise        - Keep chat responses approximately half the typical length
+r_2f_2    direct         - Provide direct, to-the-point answers without excessive explanations
+r_2f_3    essential      - Include only essential information needed to address the query
+r_2f_4    minimal        - Minimize contextual explanations unless specifically requested
+r_2f_5    action         - Focus on actions taken rather than explaining process details
+r_2f_6    examples       - Include minimal examples only when necessary for clarity
+r_2f_7    format         - Format chat responses using nested bullet points:
+                          1) Use short, single-line bullets for main points
+                          2) Indent sub-points with 2 spaces
+                          3) Maximum 3 levels of nesting
+                          4) Each bullet should be a complete thought
+                          5) Use consistent indentation for each level
+r_2f_8    structure      - Structure chat responses as:
+                          1) Brief summary (1-2 lines)
+                          2) Action taken (nested bullets)
+                          3) Next steps (if any)
 
 r_2g__ outline          - Outline prompt format
-r_2g_1    toplevel      - Only include the summaries of each prompt in prompt_groups
-r_2g_2    past          - Make sure the summaries in each place match
-r_2g_3    future        - Populate future prompt summaries
-r_2g_4    marker        - Include marker in outline file, synchronized with active prompt file
-r_2g_5    reference     - Follow general outline file rules defined in rule_03_format r_3x__
-r_2g_6    scope         - Include only prompt_group_names for future prompts in outline file; 
+r_2g_1    toplevel       - Only include the summaries of each prompt in prompt_groups
+r_2g_2    past           - Make sure the summaries in prompt_past match
+r_2g_3    future         - Populate prompt_future summaries
+r_2g_4    marker         - Include marker in prompt_outline_file, synchronized with file_current
+r_2g_5    reference      - Follow general outline file rules defined in rule_03_format r_3x__
+r_2g_6    scope          - Include only prompt_group_names for prompt_future in prompt_outline; 
                           don't create separate files for future prompt groups
 
-r_2h__ convention        - Prompt convention usage
+r_2h__ convention       - Prompt convention usage
 r_2h_1    everything     - Start each prompt_group with a brief summary explaining purpose
 r_2h_2    summary        - Use consistent format for all prompt_summaries
 r_2h_3    name           - Use consistent identifiers (e.g., prompt_struct) as references
@@ -78,70 +97,98 @@ r_2h_5    reuse          - Allow revisiting and modifying prompts as needed duri
 r_2h_6    sync           - When creating or modifying prompt content, keep the filename in sync
                            with the prompt title and update all references in outline file
 
-r_2i__ intro             - Format introductions
+r_2i__ intro            - Format introductions
 r_2i_1    overview       - Include overview of prompts with clear organizational structure
 r_2i_2    purpose        - State clear purpose summary at the beginning of each prompt_group 
 r_2i_3    concise        - Keep summary brief while providing necessary context
 r_2i_4    scannable      - Format for easy scanning with consistent visual hierarchy
 
-r_2j__ style              - Style summaries
-r_2j_1    omit            - Omit "You" when AI assistant is implied subject in prompt_summaries
-r_2j_2    action          - Use action verbs (create, implement, design) for clear direction
-r_2j_3    we              - Use "we" for collaborative review steps to indicate partnership
-r_2j_4    specificity     - Be specific about expected outcomes for each instruction point
+r_2j__ style            - Style summaries
+r_2j_1    omit           - Omit "You" when AI assistant is implied subject in prompt_summaries
+r_2j_2    action         - Use action verbs (create, implement, design) for clear direction
+r_2j_3    we             - Use "we" for collaborative review steps to indicate partnership
+r_2j_4    specificity    - Be specific about expected outcomes for each instruction point
 
-r_2k__ reuse              - Reuse prompts
-r_2k_1    iteration       - Allow for iterative refinement of prompts throughout development
-r_2k_2    modification    - Make targeted modifications to address changing requirements
-r_2k_3    documentation   - Document changes to prompts with clear rationale for adjustments
-r_2k_4    versioning      - Indicate version changes when modifying previously executed prompts
+r_2k__ reuse            - Reuse prompts
+r_2k_1    iteration      - Allow for iterative refinement of prompts throughout development
+r_2k_2    modification   - Make targeted modifications to address changing requirements
+r_2k_3    documentation  - Document changes to prompts with clear rationale for adjustments
+r_2k_4    versioning     - Indicate version changes when modifying previously executed prompts
 
-r_2l__ version            - Version control
-r_2l_1    reason          - Document reason for modification to maintain implementation history
-r_2l_2    tracking        - Enable tracking of evolution of prompts throughout development
-r_2l_3    clarity         - Provide clear versioning to avoid confusion about current state
-r_2l_4    reference       - Include references to previous versions for complete documentation
+r_2l__ version          - Version control
+r_2l_1    reason         - Document reason for modification to maintain implementation history
+r_2l_2    tracking       - Enable tracking of evolution of prompts throughout development
+r_2l_3    clarity        - Provide clear versioning to avoid confusion about current state
+r_2l_4    reference      - Include references to previous versions for complete documentation
 
 r_2m__ movement         - Marker movement rules
-r_2m_1    do_command    - "do" without parameters: process from marker position, then move marker
-r_2m_2    do_group      - "do [group]": process only that group, then move marker after it
-r_2m_3    completion    - Move marker as final step after completing any prompt processing
-r_2m_4    bottom        - Place marker at BOTTOM of processed prompt/group
-r_2m_5    progress      - Move marker to next file when current file is fully processed
-r_2m_6    sync          - Keep markers synchronized between prompt file and outline file
-r_2m_7    remove        - Remove marker from previous file when moving to next file
-r_2m_8    verify        - Double-check marker positions after completion to ensure:
-                           1) markers appear only in active prompt file and outline file
-                           2) marker_file name matches active prompt file
-                           3) marker positions in active file and outline file are consistent
+r_2m_1    do_command     - "do" without parameters: 
+                          1) Move marker to TOP of current file if not already there
+                          2) Process from marker position
+                          3) After completion, move marker to TOP of next prompt_future file
+r_2m_2    do_group       - "do [group]": 
+                          1) Move marker to TOP of file containing group
+                          2) Process only that group_current
+                          3) After completion, move marker to TOP of next prompt_future file
+r_2m_3    completion     - Move marker to TOP of next prompt_future file after completing any prompt processing
+r_2m_4    placement      - Marker must be at TOP of file_current, immediately after separator
+r_2m_5    progress       - Move marker to TOP of next prompt_future file when file_current is fully processed
+r_2m_6    sync           - Keep markers synchronized between file_current and prompt_outline_file:
+                          1) Marker in outline must point to current active file
+                          2) Marker in current file must be at TOP
+                          3) No markers in prompt_past files
+r_2m_7    remove         - When moving marker to next file:
+                          1) Remove marker from current prompt file (prompt_past)
+                          2) Remove marker from corresponding position in prompt_outline_file
+                          3) Add marker to TOP of next prompt_future file
+                          4) Add marker to corresponding position in prompt_outline_file
+r_2m_8    verify         - Double-check marker positions after completion to ensure:
+                          1) markers exist in file_current and prompt_outline_file
+                          2) marker_file name matches file_current
+                          3) marker positions in file_current and prompt_outline_file are consistent
+                          4) markers are not at the end of any file
+                          5) no markers exist in prompt_past files
 
 r_2n__ reset            - Reset command handling
-r_2n_1    command       - "reset marker" command: restore markers to initial positions
-r_2n_2    placement     - Put marker at TOP of prompt_01_start.txt and before it in outline
-r_2n_3    cleanup       - Remove markers from all other prompt files
-r_2n_4    verify        - Double-check after reset that markers are correctly positioned and
-                           no duplicate markers exist in any files
-r_2n_5    prompts       - "reset prompts" command: delete all prompt files except prompt_01_start.txt;
-                           restore outline file to only reference prompt_01_start.txt
-r_2n_6    codenames     - "reset codenames" command: clear codenames in req_02_codename.txt;
-                           restore file to initial state for starting implementation from scratch
+r_2n_1    command        - "reset marker" command: restore markers to initial positions
+r_2n_2    placement      - Put marker at TOP of prompt_01_start.txt and before it in prompt_outline
+r_2n_3    cleanup        - Remove markers from all prompt_past files
+r_2n_4    verify         - Double-check after reset that markers are correctly positioned and
+                          no duplicate markers exist in any files
+r_2n_5    prompts        - "reset prompts" command: 
+                          1) Delete all prompt_future files except prompt_01_start.txt
+                          2) Update prompt_outline.txt to:
+                             a) Only list prompt_01_start.txt and its groups
+                             b) Remove ALL entries for prompt_future files
+                             c) Remove ALL groups for prompt_future files
+                             d) Keep only the marker and prompt_01_start.txt section
+                             e) Maintain exact format: filename followed by groups
+                          3) Verify prompt_outline.txt contains:
+                             a) No references to deleted prompt files
+                             b) No groups from deleted prompt files
+                             c) Only prompt_01_start.txt and its groups
+                             d) Marker in correct position
+                          4) Ensure prompt_outline.txt matches actual prompt files present
+r_2n_6    codenames      - "reset codenames" command: clear codenames in req_02_codename.txt;
+                          restore file to initial state for starting implementation from scratch
+r_2n_7    app            - "reset app" command: delete all files and directories inside the app directory
+                          within the kernal directory; restore app directory to empty state
 
 r_2o__ marker_file      - External marker file tracking
-r_2o_1    naming        - File format: prompt_xx_-YOU_ARE_HERE.txt (xx = active prompt number)
-r_2o_2    hyphen        - Hyphen ensures file sorts before corresponding prompt file
-r_2o_3    sync          - Update when marker moves between prompt files
-r_2o_4    reset         - Reset to prompt_00_-YOU_ARE_HERE.txt on "reset marker" command
-r_2o_5    verify        - Ensure only one marker file exists and its name correctly
+r_2o_1    naming         - File format: prompt_xx_-YOU_ARE_HERE.txt (xx = active prompt number)
+r_2o_2    hyphen         - Hyphen ensures file sorts before corresponding prompt file
+r_2o_3    sync           - Update when marker moves between prompt files
+r_2o_4    reset          - Reset to prompt_00_-YOU_ARE_HERE.txt on "reset marker" command
+r_2o_5    verify         - Ensure only one marker file exists and its name correctly
                            corresponds to the current active prompt file
 
 r_2p__ requirements     - Requirements management
-r_2p_1    scope         - When updating prompts files from requirements, only populate tasks for current 
-                          prompt_group and next prompt_group
-r_2p_2    future        - For future prompt_groups beyond next, only include prompt_group_name
+r_2p_1    scope          - When updating prompts files from requirements, only populate tasks for prompt_current 
+                          group and next prompt_future group
+r_2p_2    future         - For prompt_future groups beyond next, only include prompt_group_name
                           without populating detailed tasks
-r_2p_3    preserve      - Never modify prompts above/before marker position; these are considered
-                          already processed
-r_2p_4    update        - Only update prompts at or below current marker position and in
-                          subsequent prompt files
+r_2p_3    preserve       - Never modify prompt_past; these are considered already processed
+r_2p_4    update         - Only update prompts at or below current marker position and in
+                          subsequent prompt_future files
 
 //////////////////////////////////////////////////////////////////////////////// 
