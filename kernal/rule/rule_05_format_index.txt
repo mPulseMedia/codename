@@ -1,0 +1,40 @@
+////////////////////////////////////////////////////////////////////////////////
+
+rule_04_format_index
+
+r_4a__ summary          - Formatting rules for index documentation files
+
+r_4b__ index            - Index file formatting
+r_4b_1    purpose       - Provide clear overview and navigation for documentation
+r_4b_2    structure     - Organize entries in logical hierarchical order
+r_4b_3    consistency   - Maintain consistent formatting across all index files
+r_4b_4    navigation    - Enable easy navigation through documentation structure
+r_4b_5    completeness  - Include all relevant files in appropriate sections
+r_4b_6    hierarchy     - Use clear visual hierarchy to show relationships
+r_4b_7    alignment     - Align all entries consistently for readability
+r_4b_8    spacing       - Use appropriate spacing between sections and entries
+r_4b_9    grouping      - Group related files under appropriate headings
+r_4b10    references    - Include all necessary cross-references between files
+
+r_4c__ entries          - Index entry formatting
+r_4c_1    filename      - List filename without extension
+r_4c_2    description   - Provide brief description of file purpose
+r_4c_3    alignment     - Align all descriptions consistently
+r_4c_4    indentation   - Use consistent indentation for hierarchy levels
+r_4c_5    grouping      - Group related files under appropriate headings
+r_4c_6    order         - Maintain logical order within groups
+r_4c_7    completeness  - Include all relevant files in index
+r_4c_8    references    - Include cross-references where appropriate
+r_4c_9    consistency   - Use consistent terminology across all entries
+
+r_4d__ organization     - Index organization
+r_4d_1    hierarchy     - Use clear visual hierarchy to show relationships
+r_4d_2    grouping      - Group related files under appropriate headings
+r_4d_3    order         - Maintain logical order within groups
+r_4d_4    completeness  - Include all relevant files in index
+r_4d_5    references    - Include cross-references where appropriate
+r_4d_6    navigation    - Enable easy navigation through documentation
+r_4d_7    structure     - Organize entries in logical hierarchical order
+r_4d_8    consistency   - Maintain consistent formatting across all index files
+
+//////////////////////////////////////////////////////////////////////////////// 

@@ -32,6 +32,7 @@ r_1c_9    func            - function (callable code block)
 r_1c10    var             - variable (named value holder) 
 r_1c11    cn              - codename (project-specific term)
 r_1c12    id              - alphanumeric id pattern used in documentation (r_1a__, p_2b_3)
+r_1c_12    file_number    - Two-digit number in filename (e.g., 01 in rule_01_codename.txt)
 
 r_1d__ length             - Length of terms
 r_1d_1    readability     - long terms reduce readability and search effectiveness
@@ -72,6 +73,7 @@ r_1f18    summary         - Short description of what the prompt does and appear
 r_1f19    task            - Detailed implementation instruction within a prompt
 r_1f20    task_name       - Name for a task
 r_1f21    term            - Single word used within a codename, and used to refer to a consistent concept across codenames
+r_1f_12    file_number     - Two-digit number in filename (e.g., 01 in rule_01_codename.txt)
 
 r_1g__ new                - New root creation
 r_1g_1    simplify        - Introducing a new root term for conceptual simplification
@@ -124,5 +126,15 @@ r_1n_1    base            - Use root term as starting point for codename generat
 r_1n_2    append          - Build codename by appending directory/file names to base term
 r_1n_3    display         - When codename matches known root, list it under that root
 r_1n_4    verify          - Ensure all generated codenames follow established rules
+
+r_1o__ file_number        - File number rules
+r_1o_1    format          - Use two-digit numbers (01-99) for file numbers
+r_1o_2    uniqueness      - Each file number must be unique within its directory
+r_1o_3    prefix          - Different file types (rule_, prompt_, req_) can use same file number
+                           in different directories, but not in same directory
+r_1o_4    sequence        - File numbers should be assigned sequentially without gaps
+r_1o_5    reference       - When referencing files, always include the file number
+r_1o_6    codename        - File numbers are part of the codename and must follow codename rules
+r_1o_7    tracking        - Track file numbers in kernal_codename.txt to ensure uniqueness
 
 //////////////////////////////////////////////////////////////////////////////// 

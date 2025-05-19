@@ -1,0 +1,47 @@
+////////////////////////////////////////////////////////////////////////////////
+
+rule_03_prompt_write
+
+r_3g__ outline          - Outline prompt format
+r_3g_1    toplevel       - Only include the summaries of each prompt in prompt_groups
+r_3g_2    past           - Make sure the summaries in prompt_past match
+r_3g_3    future         - Populate prompt_future summaries
+r_3g_4    marker         - Include marker in prompt_outline_file, synchronized with file_current
+r_3g_5    reference      - Follow general outline file rules defined in rule_04_format_kernal r_4x__
+r_3g_6    scope          - Include only prompt_group_names for prompt_future in prompt_outline; 
+                          don't create separate files for future prompt groups
+
+r_3h__ convention       - Prompt convention usage
+r_3h_1    everything     - Start each prompt_group with a brief summary explaining purpose
+r_3h_2    summary        - Use consistent format for all prompt_summaries
+r_3h_3    name           - Use consistent identifiers (e.g., prompt_struct) as references
+r_3h_4    style          - Write tasks in present tense imperative form for clarity
+r_3h_5    reuse          - Allow revisiting and modifying prompts as needed during development
+r_3h_6    sync           - When creating or modifying prompt content, keep the filename in sync
+                           with the prompt title and update all references in outline file
+
+r_3i__ intro            - Format introductions
+r_3i_1    overview       - Include overview of prompts with clear organizational structure
+r_3i_2    purpose        - State clear purpose summary at the beginning of each prompt_group 
+r_3i_3    concise        - Keep summary brief while providing necessary context
+r_3i_4    scannable      - Format for easy scanning with consistent visual hierarchy
+
+r_3j__ style            - Style summaries
+r_3j_1    omit           - Omit "You" when AI assistant is implied subject in prompt_summaries
+r_3j_2    action         - Use action verbs (create, implement, design) for clear direction
+r_3j_3    we             - Use "we" for collaborative review steps to indicate partnership
+r_3j_4    specificity    - Be specific about expected outcomes for each instruction point
+
+r_3k__ reuse            - Reuse prompts
+r_3k_1    iteration      - Allow for iterative refinement of prompts throughout development
+r_3k_2    modification   - Make targeted modifications to address changing requirements
+r_3k_3    documentation  - Document changes to prompts with clear rationale for adjustments
+r_3k_4    versioning     - Indicate version changes when modifying previously executed prompts
+
+r_3l__ version          - Version control
+r_3l_1    reason         - Document reason for modification to maintain implementation history
+r_3l_2    tracking       - Enable tracking of evolution of prompts throughout development
+r_3l_3    clarity        - Provide clear versioning to avoid confusion about current state
+r_3l_4    reference      - Include references to previous versions for complete documentation
+
+//////////////////////////////////////////////////////////////////////////////// 

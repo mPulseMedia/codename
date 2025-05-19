@@ -2,6 +2,35 @@
 
 rule_00_outline
 
+r_0a__ summary          - Overview of rule files and their purposes
+
+r_0b__ rules            - List of rule files with unique file numbers
+r_0b_1    rule_01_codename - Codename methodology and implementation rules (file number: 01)
+r_0b_2    rule_02_prompt_process - Prompt processing and command handling rules (file number: 02)
+r_0b_3    rule_03_prompt_write - Prompt writing and formatting rules (file number: 03)
+r_0b_4    rule_04_format_kernal - Formatting rules for kernal documentation files (file number: 04)
+r_0b_5    rule_05_format_index - Formatting rules for index documentation files (file number: 05)
+r_0b_6    rule_06_format_code - Code symbol alignment rules (file number: 06)
+
+r_0c__ descriptions     - Brief descriptions of each rule file
+r_0c_1    rule_01_codename - Defines codename methodology and implementation guidelines
+r_0c_2    rule_02_prompt_process - Specifies prompt processing and command handling
+r_0c_3    rule_03_prompt_write - Details prompt writing and formatting standards
+r_0c_4    rule_04_format_kernal - Details formatting standards for kernal documentation
+r_0c_5    rule_05_format_index - Details formatting standards for index files
+r_0c_6    rule_06_format_code - Guidelines for aligning symbols in code
+
+r_0d__ file_numbers     - File number rules
+r_0d_1    format         - Use two-digit numbers (01-99) for all file numbers
+r_0d_2    uniqueness     - Each file number must be unique within its directory
+r_0d_3    prefix         - Different file types (rule_, prompt_, req_) can use same file number
+                          in different directories, but not in same directory
+r_0d_4    sequence       - File numbers should be assigned sequentially without gaps
+r_0d_5    reference      - When referencing files, always include the file number
+r_0d_6    organization   - File numbers help maintain clear organization and ordering
+
+////////////////////////////////////////////////////////////////////////////////
+
 rule_01_codename       - Naming conventions and codename rules
 
 r_1a__ choice          - Choose words carefully
@@ -16,7 +45,7 @@ r_1i__ align           - Align symbol usage
 r_1j__ order           - Order codenames logically
 r_1k__ compact         - Compact code layout
 
-rule_02_prompt         - Prompt terminology and processing guidelines
+rule_02_prompt_process - Prompt processing and command handling
 
 r_2a__ terms           - Standard prompt terminology
 r_2b__ process         - Process for prompts
@@ -24,14 +53,22 @@ r_2c__ marker          - Marker usage and movement
 r_2d__ implement       - Implementing prompts efficiently
 r_2e__ document        - Documenting process
 r_2f__ brevity         - Brief chat messages
-r_2g__ outline         - Outline prompt format
-r_2h__ convention      - Prompt convention usage
-r_2i__ intro           - Format introductions
-r_2j__ style           - Style summaries
-r_2k__ reuse           - Reuse prompts
-r_2l__ version         - Version control
+r_2m__ movement        - Marker movement rules
+r_2n__ reset           - Reset command handling
+r_2o__ command_recognition - Command recognition and handling
+r_2p__ requirements    - Requirements management
+r_2q__ history         - Prompt history tracking
 
-rule_03_format         - Document formatting and structure standards
+rule_03_prompt_write   - Prompt writing and formatting
+
+r_3g__ outline         - Outline prompt format
+r_3h__ convention      - Prompt convention usage
+r_3i__ intro           - Format introductions
+r_3j__ style           - Style summaries
+r_3k__ reuse           - Reuse prompts
+r_3l__ version         - Version control
+
+rule_04_format_kernal  - Document formatting and structure standards
 
 r_3m__ files           - File naming conventions
 r_3j__ format          - Document formatting
@@ -50,6 +87,19 @@ r_3v__ reference       - Code references
 r_3w__ updates         - Concise updates
 r_3y__ dir             - Directory structure organization
 r_3z__ kernal_dir      - Kernal directory organization
+
+rule_05_format_index   - Index formatting rules
+
+r_4a__ summary         - Formatting rules for index documentation files
+r_4b__ index           - Index file formatting
+r_4c__ entries         - Index entry formatting
+r_4d__ organization    - Index organization
+
+rule_06_format_code    - Code symbol alignment rules
+
+r_6a__ summary         - Align symbols in adjacent lines for improved readability
+r_6b__ symbols         - Symbols to align
+r_6c__ exceptions      - List of cases to never align
 
 kernal_codename.txt    - Index of all codenames used in kernal files
 

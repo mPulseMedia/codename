@@ -8,8 +8,19 @@ q_2a_1    text         - Style text elements:
                           - Make "world" text blue
 q_2a_2    circle       - Add circular container:
                           - Draw circle around "hello world" text
-                          - Add shadow beneath circle (not behind)
-                          - Shadow should appear as if circle is above white surface
+                          - Create vertical shadow effect:
+                            a) Shadow is a smaller version of the circle
+                            b) Shadow is offset downward significantly
+                            c) Bottom edge of circle appears to rest on shadow
+                            d) Shadow creates illusion of circle floating above surface
+                            e) Shadow has soft, blurred edges for natural appearance
+                            f) Shadow appears as a distinct layer beneath the circle
+                          - Implement hover effect:
+                            a) When mouse hovers over circle, shadow moves down slightly
+                            b) Creates illusion of circle lifting from surface
+                            c) Maintains shadow's smaller size and shape
+                            d) Smooth transition for natural movement
+                            e) Shadow maintains soft edges during hover
 q_2a_3    codename     - Required codenames for formatting:
                           circle - Circular container element
                           circle_shadow - Shadow beneath circle element

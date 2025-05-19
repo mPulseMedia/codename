@@ -1,0 +1,99 @@
+////////////////////////////////////////////////////////////////////////////////
+
+rule_03_format_kernal
+
+r_3a__ summary          - Formatting rules for kernal documentation files
+
+r_3b__ files            - File naming conventions
+r_3b_1    convention    - Follow established naming convention for all documentation
+r_3b_2    descriptive   - Choose descriptive names that reflect file content and purpose
+r_3b_3    consistent    - Maintain consistent file naming format across documentation
+r_3b_4    extension     - Use .txt extension for all documentation files
+r_3b_5    structure     - Organize files logically in directory structure
+r_3b_6    file_number   - Use two-digit file numbers (01-99) in filenames (e.g., rule_01_codename.txt)
+r_3b_7    uniqueness    - Each file number must be unique within its directory
+r_3b_8    prefix        - Different file types (rule_, prompt_, req_) can use same file number
+                          in different directories, but not in same directory
+r_3b_9    sequence      - File numbers should be assigned sequentially without gaps
+r_3b10    reference     - When referencing files, always include the file number
+r_3b11    file_kernal   - Collection of core files that implement the codename methodology
+
+r_3c__ format           - Document formatting
+r_3c_1    consistency   - Maintain consistent formatting across all project documents
+r_3c_2    readability   - Ensure high readability with clear visual hierarchy and spacing
+r_3c_3    structure     - Follow structured approach to organization of content
+r_3c_4    alignment     - Use proper alignment for enhanced visual scanning and navigation
+
+r_3d__ structure        - Document structure
+r_3d_1    separator     - Horizontal line of forward slashes for major section breaks
+r_3d_2    terminology   - Follow prompt terminology defined in rule_02_prompt
+r_3d_3    spacing       - Maintain consistent spacing between structural elements
+r_3d_4    alignment     - Align related elements (task_name, summary, etc.) for clarity
+r_3d_5    hierarchy     - Create clear visual distinction between different levels
+
+r_3e__ header           - File header format
+r_3e_1    first         - Begin file with separator line (80 forward slashes)
+r_3e_2    blank         - Include blank line after separator 
+r_3e_3    filename      - Display file name on third line without "rule_group" suffix
+r_3e_4    simplicity    - Keep header simple: separator, blank line, file name
+r_3e_5    consistency   - Use identical header format across all rule files
+
+r_3f__ separator        - Visual divider between sections
+r_3f_1    boundaries    - Place before and after each major section for clear separation
+r_3f_2    visual        - Create clear visual boundaries between major content sections
+r_3f_3    width         - Ensure separators are exactly 80 characters wide for consistency
+r_3f_4    complete      - Include separator at beginning and end of document
+r_3f_5    char          - Use forward slashes (/) for separator lines
+r_3f_6    consistency   - Apply the same separator style across all documentation files
+
+r_3g__ display          - Group display format
+r_3g_1    position      - Display group identifier on a separate line after separator
+r_3g_2    format        - Format as "filename group" without dash or summary
+r_3g_3    standalone    - Keep group identifier on its own line, separate from content
+r_3g_4    hierarchy     - Use this placement to establish clear parent-child relationship
+
+r_3h__ numbering        - Rule numbering system
+r_3h_1    filetype      - Use p for prompt files, r for rule files and q for req files as prefix to the id
+r_3h_2    letters       - Use lowercase letters in alphabetical sequence for main sections
+r_3h_3    sections      - Use double underscore (__) for main section ids (r_1a__)
+r_3h_4    underscore    - Use underscore when number is less than 10 but (r_1a10) when any is over 10
+r_3h_5    digits        - Omit underscore before double-digit numbers (r_1c10 not r_1c_10)
+r_3h_6    spacing       - Align all ids consistently with proper spacing
+r_3h_7    indent        - Indent tasks consistently (4 spaces from section ids)
+r_3h_8    alignment     - Align all task names at consistent position
+r_3h_9    consistency   - Maintain consistent numbering pattern throughout document
+
+r_3i__ rules            - Rule format standards
+r_3i_1    organization  - Organize rules in hierarchical structure with consistent levels
+r_3i_2    id            - Unique alphanumeric for each line in the file_kernal
+r_3i_3    wrapped       - Align wrapped text with the starting position of the description
+r_3i_4    task          - Begin task names without leading underscore (example not _example)
+r_3i_5    spacing       - Maintain consistent indentation for all hierarchy levels
+r_3i_6    headers       - Use prominent headers for major rule sections
+r_3i_7    separator     - Use separators between major rule sections
+r_3i_8    alignment     - Align all descriptions to a consistent column position
+
+r_3j__ tasks            - Task name formatting
+r_3j_1    noprefix      - Begin task names without leading underscore (example not _example)
+r_3j_2    lowercase     - Use lowercase letters for all task names
+r_3j_3    snake         - Use snake_case for multi-word task names
+r_3j_4    alignment     - Align all task names consistently (column position 15)
+r_3j_5    brevity       - Keep task names concise and descriptive (1-2 words preferred)
+r_3j_6    consistency   - Use consistent terminology across all task names
+r_3j_7    descriptive   - Choose meaningful terms that reflect content purpose
+r_3j_8    nouns         - Use nouns for descriptive items (format, spacing)
+r_3j_9    verbs         - Use verbs for action items (create, define)
+
+r_3k__ description      - Description formatting rules
+r_3k_1    prompt        - Use - for unprocessed and > for processed items in prompt files
+r_3k_2    rule          - Use - for descriptions in rule files
+r_3k_3    req           - Use - for descriptions in requirement files
+r_3k_4    position      - Place - or > at column position 25 for all entries
+r_3k_5    capital       - Start all descriptions with capital letter
+r_3k_6    punctuation   - No ending punctuation for description lines
+r_3k_7    spacing       - Use consistent spacing between - or > and description
+r_3k_8    alignment     - Align all descriptions at column position 27
+r_3k_9    wrapping      - Align wrapped text with the starting position of the description
+r_3k10    indentation   - Maintain consistent indentation in wrapped lines (29 spaces)
+
+//////////////////////////////////////////////////////////////////////////////// 

@@ -14,7 +14,7 @@ q_2a__ app             - Application requirements
 q_2a_1    hello_world  - Create a webpage with "hello world" that appears in the center:
                           - Implement basic HTML structure
                           - Center text using CSS
-q_2a_2    index        - Place index.html in the app directory
+q_2a_2    index        - Place index.html in the app directory on the top level
 q_2a_3    minimal      - Employ JavaScript and CSS files in app subdirectories:
                           - Create app/js/ directory for JavaScript files
                           - Create app/css/ directory for CSS files

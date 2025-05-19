@@ -1,0 +1,16 @@
+////////////////////////////////////////////////////////////////////////////////
+
+rule_05_format_code
+
+r_5a__ summary          - Align symbols in adjacent lines for improved readability
+
+r_5b__ symbols          - Symbols to align
+r_5b_1    equals        - = for assignments
+r_5b_2    colon         - : for properties and selectors
+
+r_5c__ exceptions       - Never align when
+r_5c_1    disruption    - Alignment would disrupt code readability
+r_5c_2    mixed         - Lines contain mixed symbol types
+r_5c_3    unrelated     - Lines are not logically related
+
+//////////////////////////////////////////////////////////////////////////////// 

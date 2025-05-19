@@ -4,12 +4,12 @@ prompt_00_outline
 
 /// YOU ARE HERE ///
 
-prompt_01_start         - Initial setup and methodology introduction
+prompt_01_start         > Initial setup and methodology introduction
 
-p_1a__ flow            - Flow of prompt processing
-p_1b__ this            - This prompt specifics
-p_1c__ method          - Methodology principles
-p_1d__ role_list       - List of roles
-p_1e__ goal            - Project goals
+p_1a__ flow            > Flow of prompt processing
+p_1b__ this            > This prompt specifics
+p_1c__ method          > Methodology principles
+p_1d__ role_list       > List of roles
+p_1e__ goal            > Project goals
 
 ////////////////////////////////////////////////////////////////////////////////
